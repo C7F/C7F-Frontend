@@ -12,14 +12,14 @@
   <p align="center">
     A CTF Platform built with Typescript.
     <br />
-    <a href="https://github.com/C7F/repo"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/C7F/C7F-Frontend"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/C7F/repo">View Demo</a>
+    <a href="https://github.com/C7F/C7F-Frontend">View Demo</a>
     ·
-    <a href="https://github.com/C7F/repo/issues">Report Bug</a>
+    <a href="https://github.com/C7F/C7F-Frontend/issues">Report Bug</a>
     ·
-    <a href="https://github.com/C7F/repo/issues">Request Feature</a>
+    <a href="https://github.com/C7F/C7F-Frontend/issues">Request Feature</a>
   </p>
 </p>
 
@@ -125,4 +125,4 @@ Distributed under the MIT License. See [`LICENSE`](./LICENSE) for more informati
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=flat-square
-[issues-url]: https://github.com/C7F/repo/issues
+[issues-url]: https://github.com/C7F/C7F-Frontend/issues
