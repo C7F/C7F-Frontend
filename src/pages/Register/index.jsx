@@ -9,6 +9,12 @@ import Error from '../../components/Error';
 
 import './style.css';
 
+import {
+    teamNameRegex,
+    emailRegex,
+    passwordRegex,
+} from '../../utils/constants';
+
 export default function Register() {
     const [email, setEmail] = useState('');
     const [teamName, setTeamName] = useState('');
@@ -29,7 +35,6 @@ export default function Register() {
 
     useEffect(() => {
         const validateEmail = () => {
-            const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             if (!emailRegex.test(email.toLowerCase())) {
                 setError('Invalid email!');
                 return false;
@@ -39,7 +44,6 @@ export default function Register() {
         };
 
         const validateTeamName = () => {
-            const teamNameRegex = /^[^\s]{3,100}$/;
             if (!teamNameRegex.test(teamName)) {
                 setError('Invalid team name!');
                 return false;
@@ -49,7 +53,6 @@ export default function Register() {
         };
 
         const validatePassword = () => {
-            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,255}$/;
             if (!passwordRegex.test(password)) {
                 setError('Invalid password!');
                 return false;
