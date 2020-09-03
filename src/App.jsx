@@ -13,7 +13,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 import Home from './pages/Home';
-import About from './pages/About';
+import Register from './pages/Register';
 import Login from './pages/Login';
 
 import Sidebar from './components/Sidebar';
@@ -27,8 +27,8 @@ function App() {
             <Col>
                 <Router>
                     <Switch>
-                        <Route path="/about">
-                            <About />
+                        <Route path="/register">
+                            <Register />
                         </Route>
                         <Route path="/login">
                             <Login />
