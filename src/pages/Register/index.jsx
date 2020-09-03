@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     Form,
     Button,
@@ -9,6 +9,22 @@ import Card from '../../components/Card';
 import './style.css';
 
 export default function Register() {
+    const [teamName, setTeamName] = useState('');
+    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('');
+
+    const changeEmail = ({ target }) => {
+        setEmail(target.value);
+    };
+
+    const changeTeamName = ({ target }) => {
+        setTeamName(target.value);
+    };
+
+    const changePassword = ({ target }) => {
+        setPassword(target.value);
+    };
+
     return (
         <div className="mt-5 register-container">
             <Form>
@@ -17,7 +33,7 @@ export default function Register() {
                     <Card.Body>
                         <Form.Group controlId="teamEmail">
                             <Form.Label>Email address</Form.Label>
-                            <Form.Control type="email" placeholder="Enter email" />
+                            <Form.Control type="email" value={email} onChange={changeEmail} placeholder="Enter email" />
                             <Form.Text className="text-muted">
                                 You will receive a verification email.
                             </Form.Text>
@@ -25,12 +41,12 @@ export default function Register() {
 
                         <Form.Group controlId="teamUsername">
                             <Form.Label>Team name</Form.Label>
-                            <Form.Control type="text" placeholder="Enter team name" />
+                            <Form.Control type="text" value={teamName} onChange={changeTeamName} placeholder="Enter team name" />
                         </Form.Group>
 
                         <Form.Group controlId="teamPassword">
                             <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" placeholder="Password" />
+                            <Form.Control type="password" value={password} onChange={changePassword} placeholder="Password" />
                         </Form.Group>
                     </Card.Body>
                     <Card.Footer>
