@@ -9,9 +9,9 @@ import Card from '../../components/Card';
 import Error from '../../components/Error';
 
 import {
-    teamNameRegex,
-    passwordRegex,
-} from '../../utils/constants';
+    validateTeamName,
+    validatePassword,
+} from '../../utils/validation';
 
 export default function Login() {
     const [teamName, setTeamName] = useState('');
@@ -27,25 +27,7 @@ export default function Login() {
     };
 
     useEffect(() => {
-        const validateTeamName = () => {
-            if (!teamNameRegex.test(teamName)) {
-                setError('Invalid team name!');
-                return false;
-            }
-            setError('');
-            return true;
-        };
-
-        const validatePassword = () => {
-            if (!passwordRegex.test(password)) {
-                setError('Invalid password!');
-                return false;
-            }
-            setError('');
-            return true;
-        };
-
-        if (validateTeamName() && validatePassword());
+        if (validateTeamName(teamName, setError) && validatePassword(password, setError));
     }, [teamName, password]);
 
     return (
@@ -57,12 +39,12 @@ export default function Login() {
                     <Card.Body>
                         <Form.Group controlId="teamUsername">
                             <Form.Label>Team name</Form.Label>
-                            <Form.Control type="text" value={teamName} onChange={changeTeamName} placeholder="Enter team name" />
+                            <Form.Control type="text" value={teamName} onChange={changeTeamName} placeholder="Enter team name" required />
                         </Form.Group>
 
                         <Form.Group controlId="teamPassword">
                             <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" value={password} onChange={changePassword} placeholder="Password" />
+                            <Form.Control type="password" value={password} onChange={changePassword} placeholder="Password" required />
                         </Form.Group>
                     </Card.Body>
                     <Card.Footer>
