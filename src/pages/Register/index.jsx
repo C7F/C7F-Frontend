@@ -5,7 +5,7 @@ import {
 } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 
-import { nameAdded } from '../../slices/teamSlice';
+import { nameUpdate } from '../../slices/teamSlice';
 
 import Card from '../../components/Card';
 import Error from '../../components/Error';
@@ -48,7 +48,7 @@ export default function Register() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(nameAdded(teamName));
+        dispatch(nameUpdate(teamName));
     };
 
     return (

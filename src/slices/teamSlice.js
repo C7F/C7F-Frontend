@@ -7,25 +7,14 @@ const teamSlice = createSlice({
         score: 0,
     },
     reducers: {
-        nameAdded: {
-            reducer(state, action) {
-                const s = state;
-                s.team = action.payload;
-            },
-            prepare(name) {
-                return {
-                    payload: {
-                        name,
-                        score: 0,
-                    },
-                };
-            },
+        nameUpdate(state, action) {
+            state.name = action.payload;
         },
     },
 });
 
 export const selectTeam = (state) => state.team;
 
-export const { nameAdded } = teamSlice.actions;
+export const { nameUpdate } = teamSlice.actions;
 
 export default teamSlice.reducer;
