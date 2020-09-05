@@ -6,8 +6,21 @@ import './style.scss';
 
 function Button(props) {
     const {
-        btnType, children, className, blockLevel,
+        btnType,
+        children,
+        className,
+        blockLevel,
+        type,
     } = props;
+
+    if (type === 'submit') {
+        return (
+            <button type="submit" className={classNames('terminal-btn', `terminal-btn-${btnType}`, className, { 'btn-block': blockLevel })}>
+                {children}
+            </button>
+        );
+    }
+
     return (
         <button type="button" className={classNames('terminal-btn', `terminal-btn-${btnType}`, className, { 'btn-block': blockLevel })}>
             {children}
@@ -20,6 +33,7 @@ const propType = {
     children: propTypes.node,
     className: propTypes.string,
     blockLevel: propTypes.bool,
+    type: propTypes.string,
 };
 
 const defaultProps = {
@@ -27,6 +41,7 @@ const defaultProps = {
     children: <></>,
     className: '',
     blockLevel: false,
+    type: 'button',
 };
 
 Button.propTypes = propType;
