@@ -1,0 +1,30 @@
+.terminal-btn {
+    border-style: solid;
+    border-width: 1px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    outline: 0;
+    padding: .65em 2em;
+    font-size: 1em;
+    font-family: inherit;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: relative;
+    z-index: 1;
+}
+
+.terminal-btn-primary {
+    color: var(--invert-font-color);
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.terminal-btn-error {
+    color: var(--invert-font-color);
+    background-color: var(--error-color);
+    border: 1px solid var(--error-color);
+}

@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import {
-    Form,
-    Button,
-} from 'react-bootstrap';
 
 import Card from '../../components/Card';
 import Error from '../../components/Error';
+import Button from '../../components/Button';
 
 import {
     validateEmail,
@@ -13,7 +10,7 @@ import {
     validatePassword,
 } from '../../utils/validation';
 
-import './style.css';
+import './style.scss';
 
 export default function Register() {
     const [email, setEmail] = useState('');
@@ -43,37 +40,35 @@ export default function Register() {
 
     return (
         <div className="mt-5 register-container">
-            <Form>
+            <form>
                 <Card className="register-card m-auto">
-                    <Error>{error}</Error>
                     <Card.Header>Register</Card.Header>
                     <Card.Body>
-                        <Form.Group controlId="teamEmail">
-                            <Form.Label>Email address</Form.Label>
-                            <Form.Control type="email" value={email} onChange={changeEmail} placeholder="Enter email" required />
-                            <Form.Text className="text-muted">
+                        <Error>{error}</Error>
+                        <div className="form-group" controlId="teamEmail">
+                            <label htmlFor="email">Email address</label>
+                            <input id="email" type="email" value={email} onChange={changeEmail} placeholder="Enter email" required />
+                            <small className="text-muted">
                                 You will receive a verification email.
-                            </Form.Text>
-                        </Form.Group>
+                            </small>
+                        </div>
 
-                        <Form.Group controlId="teamUsername">
-                            <Form.Label>Team name</Form.Label>
-                            <Form.Control type="text" value={teamName} onChange={changeTeamName} placeholder="Enter team name" required />
-                        </Form.Group>
+                        <div className="form-group" controlId="teamUsername">
+                            <label htmlFor="email">Team name</label>
+                            <input id="email" type="text" value={teamName} onChange={changeTeamName} placeholder="Enter team name" required />
+                        </div>
 
-                        <Form.Group controlId="teamPassword">
-                            <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" value={password} onChange={changePassword} placeholder="Password" required />
-                        </Form.Group>
-                    </Card.Body>
-                    <Card.Footer>
-                        <Button variant="primary" type="submit">
+                        <div className="form-group" controlId="teamPassword">
+                            <label htmlFor="email">Password</label>
+                            <input id="email" type="password" value={password} onChange={changePassword} placeholder="Password" required />
+                        </div>
+
+                        <Button btnType="primary" blockLevel>
                             Submit
                         </Button>
-                    </Card.Footer>
+                    </Card.Body>
                 </Card>
-            </Form>
-
+            </form>
         </div>
     );
 }
