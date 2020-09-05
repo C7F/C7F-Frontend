@@ -39,9 +39,9 @@ function Button(props) {
 
     if (type === 'submit') {
         return (
-            <button type="submit" className={classNames('terminal-btn', `terminal-btn-${btnType}`, className, { 'btn-block': blockLevel })}>
+            <TerminalBtn type="submit" btnType={btnType} className={classNames(className, { 'btn-block': blockLevel })}>
                 {children}
-            </button>
+            </TerminalBtn>
         );
     }
 

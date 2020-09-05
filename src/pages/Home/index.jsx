@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './style.scss';
+import { nanoid } from '@reduxjs/toolkit';
+import Typist from 'react-typist';
 
 export default function Home() {
     const calculateTimeLeft = () => {
@@ -20,7 +22,6 @@ export default function Home() {
     };
 
     const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-    const [year] = useState(new Date().getFullYear());
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -37,7 +38,7 @@ export default function Home() {
         }
 
         timerComponents.push(
-            <span>
+            <span key={nanoid()}>
                 {timeLeft[interval]}
                 {' '}
                 {interval}
@@ -47,10 +48,13 @@ export default function Home() {
     });
     return (
         <div className="center">
-            <h1>
-                Welcome to C7F
-                {year}
-            </h1>
+            <Typist>
+                <h1>
+                    Hey!
+                    <Typist.Backspace count={4} delay={500} />
+                    Welcome to C7F2020
+                </h1>
+            </Typist>
             <br />
             <h3>
                 Countdown

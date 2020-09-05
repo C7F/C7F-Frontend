@@ -77,7 +77,7 @@ export default function Register() {
                         </div>
 
                         <Button btnType="primary" type="submit" blockLevel>
-                            Submit
+                            Register
                         </Button>
                     </Card.Body>
                 </Card>
