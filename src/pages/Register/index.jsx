@@ -36,7 +36,6 @@ export default function Register() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('here');
         if (await requestRegister({ email, name: teamName, password })) {
             history.push('/login');
         } else {
