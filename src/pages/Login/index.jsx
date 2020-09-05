@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import {
     Form,
     Button,
 } from 'react-bootstrap';
 import './style.css';
 import { useDispatch } from 'react-redux';
+import { unwrapResult } from '@reduxjs/toolkit';
 
 import Card from '../../components/Card';
 import Error from '../../components/Error';
 
-import { nameUpdate } from '../../slices/teamSlice';
+import { nameUpdate, fetchToken } from '../../slices/teamSlice';
 
 import {
     validateTeamName,
@@ -29,16 +31,26 @@ export default function Login() {
         setPassword(target.value);
     };
 
+    const dispatch = useDispatch();
+    const history = useHistory();
+
+    const redirectToChallenges = () => history.push('/challenges');
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        dispatch(nameUpdate(teamName));
+        dispatch(fetchToken({ teamName, password }))
+            .then(unwrapResult)
+            .then(redirectToChallenges)
+            .catch(() => {
+                setError('Login failed!');
+            });
+    };
+
     useEffect(() => {
         if (validateTeamName(teamName, setError) && validatePassword(password, setError));
     }, [teamName, password]);
-
-    const dispatch = useDispatch();
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        dispatch(nameUpdate(teamName));
-    };
 
     return (
         <div className="mt-5 register-container">
