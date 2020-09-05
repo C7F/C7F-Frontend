@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import './style.scss';
+import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { unwrapResult } from '@reduxjs/toolkit';
 
 import Card from '../../components/Card';
 import Error from '../../components/Error';
 import Button from '../../components/Button';
 
-import { nameUpdate } from '../../slices/teamSlice';
+import './style.scss';
+
+import { nameUpdate, fetchToken } from '../../slices/teamSlice';
 
 import {
     validateTeamName,
@@ -26,16 +29,26 @@ export default function Login() {
         setPassword(target.value);
     };
 
+    const dispatch = useDispatch();
+    const history = useHistory();
+
+    const redirectToChallenges = () => history.push('/challenges');
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        dispatch(nameUpdate(teamName));
+        dispatch(fetchToken({ teamName, password }))
+            .then(unwrapResult)
+            .then(redirectToChallenges)
+            .catch(() => {
+                setError('Login failed!');
+            });
+    };
+
     useEffect(() => {
         if (validateTeamName(teamName, setError) && validatePassword(password, setError));
     }, [teamName, password]);
-
-    const dispatch = useDispatch();
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        dispatch(nameUpdate(teamName));
-    };
 
     return (
         <div className="mt-5 register-container">
@@ -57,7 +70,7 @@ export default function Login() {
                             </label>
                             <input id="password" type="password" value={password} onChange={changePassword} placeholder="Password" required />
                         </div>
-                        <Button btnType="primary" blockLevel>
+                        <Button btnType="primary" type="submit" blockLevel>
                             Submit
                         </Button>
                     </Card.Body>
