@@ -16,8 +16,9 @@ import './App.scss';
 import 'terminal.css';
 
 import Home from './pages/Home';
-import Register from './pages/Register';
 import Login from './pages/Login';
+import Register from './pages/Register';
+import Challenge from './pages/Challenge';
 
 import Sidebar from './components/Sidebar';
 
@@ -45,6 +46,9 @@ function App() {
                                 </Route>
                                 <Route path="/login">
                                     <Login />
+                                </Route>
+                                <Route path="/challenge/:id">
+                                    <Challenge />
                                 </Route>
                                 <Route path="/">
                                     <Home />
