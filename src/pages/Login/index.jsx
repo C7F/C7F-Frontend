@@ -4,9 +4,12 @@ import {
     Button,
 } from 'react-bootstrap';
 import './style.css';
+import { useDispatch } from 'react-redux';
 
 import Card from '../../components/Card';
 import Error from '../../components/Error';
+
+import { nameUpdate } from '../../slices/teamSlice';
 
 import {
     validateTeamName,
@@ -30,9 +33,16 @@ export default function Login() {
         if (validateTeamName(teamName, setError) && validatePassword(password, setError));
     }, [teamName, password]);
 
+    const dispatch = useDispatch();
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        dispatch(nameUpdate(teamName));
+    };
+
     return (
         <div className="mt-5 register-container">
-            <Form>
+            <Form onSubmit={handleSubmit}>
                 <Card className="login-card m-auto">
                     <Error>{error}</Error>
                     <Card.Header>Login</Card.Header>

@@ -3,9 +3,6 @@ import {
     Form,
     Button,
 } from 'react-bootstrap';
-import { useDispatch } from 'react-redux';
-
-import { nameUpdate } from '../../slices/teamSlice';
 
 import Card from '../../components/Card';
 import Error from '../../components/Error';
@@ -23,8 +20,6 @@ export default function Register() {
     const [teamName, setTeamName] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
-
-    const dispatch = useDispatch();
 
     const changeEmail = ({ target }) => {
         setEmail(target.value);
@@ -46,14 +41,9 @@ export default function Register() {
         );
     }, [teamName, email, password]);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        dispatch(nameUpdate(teamName));
-    };
-
     return (
         <div className="mt-5 register-container">
-            <Form onSubmit={handleSubmit}>
+            <Form>
                 <Card className="register-card m-auto">
                     <Error>{error}</Error>
                     <Card.Header>Register</Card.Header>
