@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import {
     Form,
     Button,
@@ -12,6 +13,7 @@ import {
     validateTeamName,
     validatePassword,
 } from '../../utils/validation';
+import { requestRegister } from '../../api/auth';
 
 import './style.css';
 
@@ -33,6 +35,18 @@ export default function Register() {
         setPassword(target.value);
     };
 
+    const history = useHistory();
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        console.log('here');
+        if (await requestRegister({ email, name: teamName, password })) {
+            history.push('/login');
+        } else {
+            setError('Registration failed!');
+        }
+    };
+
     useEffect(() => {
         if (
             validateEmail(email, setError)
@@ -43,7 +57,7 @@ export default function Register() {
 
     return (
         <div className="mt-5 register-container">
-            <Form>
+            <Form onSubmit={handleSubmit}>
                 <Card className="register-card m-auto">
                     <Error>{error}</Error>
                     <Card.Header>Register</Card.Header>
