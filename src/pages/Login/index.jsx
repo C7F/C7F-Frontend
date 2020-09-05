@@ -70,7 +70,7 @@ export default function Login() {
                             </label>
                             <input id="password" type="password" value={password} onChange={changePassword} placeholder="Password" required />
                         </div>
-                        <Button btnType="primary" blockLevel>
+                        <Button btnType="primary" type="submit" blockLevel>
                             Submit
                         </Button>
                     </Card.Body>
