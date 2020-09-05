@@ -27,6 +27,6 @@ const themeSlice = createSlice({
     },
 });
 
-export const { nameUpdate } = themeSlice.actions;
+export const { themeUpdate } = themeSlice.actions;
 
 export default themeSlice.reducer;
