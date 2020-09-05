@@ -47,20 +47,20 @@ export default function Home() {
         );
     });
     return (
-        <div className="center">
-            <Typist>
-                <h1>
+        <div>
+            <h1 className="">
+                <Typist>
                     Hey!
                     <Typist.Backspace count={4} delay={500} />
                     Welcome to C7F2020
-                </h1>
-            </Typist>
-            <br />
-            <h3>
-                Countdown
-            </h3>
-
-            {timerComponents.length ? timerComponents : <span>It is time!</span>}
+                </Typist>
+            </h1>
+            <div className="text-center mt-5">
+                <h3>
+                    Countdown
+                </h3>
+                {timerComponents.length ? timerComponents : <span>It is time!</span>}
+            </div>
         </div>
 
     );
