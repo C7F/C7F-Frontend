@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 
-import './style.css';
+import './style.scss';
 
 export default function Sidebar() {
     return (

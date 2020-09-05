@@ -10,7 +10,8 @@ import {
 } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import './App.css';
+import './App.scss';
+import 'terminal.css';
 
 import Home from './pages/Home';
 import Register from './pages/Register';

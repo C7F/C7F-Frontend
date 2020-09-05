@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import {
-    Form,
-    Button,
-} from 'react-bootstrap';
-import './style.css';
 import { useDispatch } from 'react-redux';
 import { unwrapResult } from '@reduxjs/toolkit';
 
 import Card from '../../components/Card';
 import Error from '../../components/Error';
+import Button from '../../components/Button';
+
+import './style.scss';
 
 import { nameUpdate, fetchToken } from '../../slices/teamSlice';
 
@@ -54,29 +52,30 @@ export default function Login() {
 
     return (
         <div className="mt-5 register-container">
-            <Form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
                 <Card className="login-card m-auto">
-                    <Error>{error}</Error>
                     <Card.Header>Login</Card.Header>
                     <Card.Body>
-                        <Form.Group controlId="teamUsername">
-                            <Form.Label>Team name</Form.Label>
-                            <Form.Control type="text" value={teamName} onChange={changeTeamName} placeholder="Enter team name" required />
-                        </Form.Group>
+                        <Error>{error}</Error>
+                        <div className="form-group">
+                            <label htmlFor="teamName">
+                                Team name
+                            </label>
+                            <input id="teamName" type="text" value={teamName} onChange={changeTeamName} placeholder="Enter team name" required />
+                        </div>
 
-                        <Form.Group controlId="teamPassword">
-                            <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" value={password} onChange={changePassword} placeholder="Password" required />
-                        </Form.Group>
-                    </Card.Body>
-                    <Card.Footer>
-                        <Button variant="primary" type="submit">
+                        <div className="form-group">
+                            <label htmlFor="password">
+                                Password
+                            </label>
+                            <input id="password" type="password" value={password} onChange={changePassword} placeholder="Password" required />
+                        </div>
+                        <Button btnType="primary" blockLevel>
                             Submit
                         </Button>
-                    </Card.Footer>
+                    </Card.Body>
                 </Card>
-            </Form>
-
+            </form>
         </div>
     );
 }
