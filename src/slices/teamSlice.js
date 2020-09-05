@@ -1,14 +1,27 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { requestLogin } from '../api/auth';
+
+export const fetchToken = createAsyncThunk('team/fetchToken', async ({ teamName, password }) => {
+    const token = await requestLogin({ name: teamName, password });
+    return token;
+});
 
 const teamSlice = createSlice({
     name: 'team',
     initialState: {
         name: '',
-        score: 0,
+        points: 0,
+        loggedIn: false,
+        loginToken: '',
     },
     reducers: {
         nameUpdate(state, action) {
             state.name = action.payload;
+        },
+    },
+    extraReducers: {
+        [fetchToken.fulfilled]: (state, action) => {
+            state.loginToken = action.payload;
         },
     },
 });
