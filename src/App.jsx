@@ -20,6 +20,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Challenge from './pages/Challenge';
 
+import TokenLogin from './components/TokenLogin';
 import Sidebar from './components/Sidebar';
 
 const Page = styled.div`
@@ -46,6 +47,9 @@ function App() {
                                 </Route>
                                 <Route path="/login">
                                     <Login />
+                                </Route>
+                                <Route path="/tokenLogin">
+                                    <TokenLogin />
                                 </Route>
                                 <Route path="/challenge/:id">
                                     <Challenge />
