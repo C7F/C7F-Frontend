@@ -19,8 +19,8 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Challenge from './pages/Challenge';
+import TokenLogin from './pages/TokenLogin';
 
-import TokenLogin from './components/TokenLogin';
 import Sidebar from './components/Sidebar';
 import { getTheme } from './slices/themeSlice';
 
