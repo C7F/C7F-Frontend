@@ -30,4 +30,6 @@ const themeSlice = createSlice({
 
 export const { themeUpdate } = themeSlice.actions;
 
+export const getTheme = (state) => state.theme;
+
 export default themeSlice.reducer;

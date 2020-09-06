@@ -22,6 +22,7 @@ import Challenge from './pages/Challenge';
 
 import TokenLogin from './components/TokenLogin';
 import Sidebar from './components/Sidebar';
+import { getTheme } from './slices/themeSlice';
 
 const Page = styled.div`
     background-color: ${(props) => props.theme.bgColor};
@@ -31,12 +32,12 @@ const Page = styled.div`
 `;
 
 function App() {
-    const theme = useSelector((state) => state.theme);
+    const theme = useSelector(getTheme);
     return (
         <ThemeProvider theme={theme}>
             <Page>
                 <Row>
-                    <Col md="2">
+                    <Col md="3">
                         <Sidebar />
                     </Col>
                     <Col>
