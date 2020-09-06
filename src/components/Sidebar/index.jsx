@@ -26,7 +26,7 @@ export default function Sidebar() {
                 <Nav.Item>
                     <Nav.Link href="/challenge/1" className="text-light">Challenges</Nav.Link>
                 </Nav.Item>
-                <Countdown date="10/1/2020" />
+                <Countdown date={+new Date('10/1/2020')} />
             </Nav>
         </div>
     );
