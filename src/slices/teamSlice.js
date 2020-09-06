@@ -26,9 +26,16 @@ const teamSlice = createSlice({
     },
     extraReducers: {
         [fetchToken.fulfilled]: (state, action) => {
+            // TODO: Logic to add errors to redux store
+            if (action.error) {
+                return;
+            }
             state.token = action.payload;
         },
         [fetchTokenUsingToken.fulfilled]: (state, action) => {
+            if (action.error) {
+                return;
+            }
             state.token = action.payload;
         },
     },
