@@ -1,18 +1,24 @@
 import React from 'react';
 import propTypes from 'prop-types';
+import styled from 'styled-components';
 
 import Typist from 'react-typist';
 
 import './style.scss';
 
+const CardHeader = styled.header`
+    font-size: 1.3rem;
+    background-color: ${(props) => props.theme.dark} !important;
+`;
+
 function Header(props) {
     const { children, className } = props;
     return (
-        <header className={`card-header ${className}`}>
+        <CardHeader className={`${className}`}>
             <Typist avgTypingDelay={150} cursor={{ hideWhenDone: true, hideWhenDoneDelay: 300 }}>
                 {children}
             </Typist>
-        </header>
+        </CardHeader>
     );
 }
 
