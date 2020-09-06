@@ -15,9 +15,18 @@ export default function Challenge() {
         }
     });
 
+    const sampleChallenge = `# Oreo
+
+My nephew is a fussy eater and is only willing to eat chocolate oreo. Any other flavour and he throws a tantrum.
+
+Challenge: [Oreo](http://chall.csivit.com:30243)
+`;
+
     return (
         <div className="challenge-container mt-2">
-            <Highlight />
+            <Highlight>
+                {sampleChallenge}
+            </Highlight>
         </div>
     );
 }
