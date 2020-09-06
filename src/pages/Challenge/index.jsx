@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 
 import Card from '../../components/Card';
+import Highlight from '../../components/Highlight';
 
 import './style.scss';
 
@@ -9,9 +10,11 @@ export default function Challenge() {
     const { id } = useParams();
     const history = useHistory();
 
-    if (!id) {
-        return history.push('/');
-    }
+    useEffect(() => {
+        if (!id) {
+            history.push('/');
+        }
+    });
 
     return (
         <div className="mt-5 challenge-container">
@@ -21,6 +24,7 @@ export default function Challenge() {
                 </Card.Header>
                 <Card.Body>
                     Challenge Description
+                    <Highlight />
                 </Card.Body>
             </Card>
         </div>
