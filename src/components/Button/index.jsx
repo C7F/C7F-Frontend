@@ -23,7 +23,7 @@ const TerminalBtn = styled.button`
     position: relative;
     z-index: 1;
 
-    color: ${(props) => props.theme.fgColor};
+    color: ${(props) => props.theme.primText};
     background-color: ${(props) => props.theme[props.btnType]};
     border: 1px solid ${(props) => props.theme[props.btnType]};
 `;
