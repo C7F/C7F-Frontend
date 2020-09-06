@@ -6,7 +6,7 @@ export default function Home() {
     return (
         <div>
             <h1>
-                <Typist>
+                <Typist cursor={{ hideWhenDone: true, hideWhenDoneDelay: 300 }}>
                     Hey!
                     <Typist.Backspace count={4} delay={500} />
                     Welcome to C7F2020
