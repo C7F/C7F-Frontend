@@ -24,7 +24,7 @@ export default function Sidebar() {
                     <Nav.Link href="/register" className="text-light">Register</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link href="/challenge" className="text-light">Challenges</Nav.Link>
+                    <Nav.Link href="/challenge/1" className="text-light">Challenges</Nav.Link>
                 </Nav.Item>
                 <Countdown date="10/1/2020" />
             </Nav>
