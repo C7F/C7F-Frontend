@@ -4,7 +4,8 @@ const THEMES = {
     dracula: {
         fgColor: '#f8f8f2',
         bgColor: '#282a36',
-        primary: '#bd93f9',
+        dark: '#44475a',
+        primary: '#6272a4',
         error: '#ff5555',
         default: '#44475a',
         warning: '',
