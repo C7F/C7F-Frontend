@@ -58,7 +58,7 @@ export default function Register() {
                     <Card.Header>Register</Card.Header>
                     <Card.Body>
                         <Error>{error}</Error>
-                        <div className="form-group" controlId="teamEmail">
+                        <div className="form-group">
                             <label htmlFor="email">Email address</label>
                             <input id="email" type="email" value={email} onChange={changeEmail} placeholder="Enter email" required />
                             <small className="text-muted">
@@ -66,14 +66,14 @@ export default function Register() {
                             </small>
                         </div>
 
-                        <div className="form-group" controlId="teamUsername">
-                            <label htmlFor="email">Team name</label>
-                            <input id="email" type="text" value={teamName} onChange={changeTeamName} placeholder="Enter team name" required />
+                        <div className="form-group">
+                            <label htmlFor="registerEmail">Team name</label>
+                            <input id="registerEmail" type="text" value={teamName} onChange={changeTeamName} placeholder="Enter team name" required />
                         </div>
 
-                        <div className="form-group" controlId="teamPassword">
-                            <label htmlFor="email">Password</label>
-                            <input id="email" type="password" value={password} onChange={changePassword} placeholder="Password" required />
+                        <div className="form-group">
+                            <label htmlFor="registerPassword">Password</label>
+                            <input id="registerPassword" type="password" value={password} onChange={changePassword} placeholder="Password" required />
                         </div>
 
                         <Button btnType="primary" type="submit" blockLevel>
