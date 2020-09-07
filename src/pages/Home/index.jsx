@@ -19,7 +19,8 @@ export default function Home() {
                 </Typist>
             </Heading1>
             <article className="home-description">
-                <p>Team C7F is hosting a another CTF!</p>
+                <div>Team C7F is hosting a another CTF!</div>
+                <br />
                 <Heading2 type="primary">
                     <Typist
                         avgTypingDelay={40}
@@ -29,7 +30,7 @@ export default function Home() {
                         When?
                     </Typist>
                 </Heading2>
-                <p>
+                <div className="home-text">
                     Start Time:
                     {' '}
                     {new Date('9/10/2020').toString()}
@@ -38,7 +39,7 @@ export default function Home() {
                     End Time:
                     {' '}
                     {new Date('11/10/2020').toString()}
-                </p>
+                </div>
                 <Heading2 type="primary">
                     <Typist
                         avgTypingDelay={40}
@@ -48,9 +49,9 @@ export default function Home() {
                         Where?
                     </Typist>
                 </Heading2>
-                <p>
+                <div className="home-text">
                     The CTF is online and anyone can take part in it!
-                </p>
+                </div>
                 <Heading2 type="primary">
                     <Typist
                         avgTypingDelay={40}
@@ -60,18 +61,18 @@ export default function Home() {
                         What?
                     </Typist>
                 </Heading2>
-                <p>
+                <div className="home-text">
                     We have challenges of various categories including:
-                </p>
-                <ul>
-                    <li>Pwn</li>
-                    <li>Web</li>
-                    <li>Steg</li>
-                    <li>Misc</li>
-                    <li>Linux</li>
-                    <li>Crypto</li>
-                    <li>Reversing</li>
-                </ul>
+                    <ul>
+                        <li>Pwn</li>
+                        <li>Web</li>
+                        <li>Steg</li>
+                        <li>Misc</li>
+                        <li>Linux</li>
+                        <li>Crypto</li>
+                        <li>Reversing</li>
+                    </ul>
+                </div>
                 <Heading2 type="primary">
                     <Typist
                         avgTypingDelay={20}
@@ -81,14 +82,14 @@ export default function Home() {
                         Flag format?
                     </Typist>
                 </Heading2>
-                <p>
+                <div className="home-text">
                     The flag is in the following format:
                     <br />
                     <br />
-                </p>
-                <Highlight>
-                    {'C7F{some_string_here}'}
-                </Highlight>
+                    <Highlight>
+                        {'C7F{some_string_here}'}
+                    </Highlight>
+                </div>
                 <Heading2 type="primary">
                     <Typist
                         avgTypingDelay={40}
@@ -98,15 +99,15 @@ export default function Home() {
                         Sponsors
                     </Typist>
                 </Heading2>
-                <p>
+                <div className="home-text">
                     C7F2020 is sponsored by:
-                </p>
-                <ul>
-                    <li>Google Cloud</li>
-                    <li>HackTheBox</li>
-                    <li>TryHackMe</li>
-                    <li>Trail of Bits</li>
-                </ul>
+                    <ul>
+                        <li>Google Cloud</li>
+                        <li>HackTheBox</li>
+                        <li>TryHackMe</li>
+                        <li>Trail of Bits</li>
+                    </ul>
+                </div>
             </article>
         </div>
 
