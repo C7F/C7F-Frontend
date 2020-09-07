@@ -20,11 +20,9 @@ export default function Sidebar() {
                     link: '/register',
                 }, {
                     text: 'Challenges',
-                    link: '/challenge',
                     children: [
                         {
                             text: 'Pwn',
-                            link: '/challenge/pwn',
                             children: [
                                 {
                                     text: 'pwn-intended-0x1',
@@ -42,7 +40,6 @@ export default function Sidebar() {
                         },
                         {
                             text: 'Web',
-                            link: '/challenge/web',
                             children: [
                                 {
                                     text: 'Oreo',

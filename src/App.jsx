@@ -34,12 +34,12 @@ function App() {
     return (
         <ThemeProvider theme={theme}>
             <Page>
-                <Row>
-                    <Col md="3">
-                        <Sidebar />
-                    </Col>
-                    <Col>
-                        <Router>
+                <Router>
+                    <Row>
+                        <Col md="3">
+                            <Sidebar />
+                        </Col>
+                        <Col>
                             <Switch>
                                 <Route path="/register">
                                     <Register />
@@ -54,9 +54,9 @@ function App() {
                                     <Home />
                                 </Route>
                             </Switch>
-                        </Router>
-                    </Col>
-                </Row>
+                        </Col>
+                    </Row>
+                </Router>
             </Page>
         </ThemeProvider>
     );

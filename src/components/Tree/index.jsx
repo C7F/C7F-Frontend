@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import propTypes from 'prop-types';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import { nanoid } from '@reduxjs/toolkit';
 
@@ -22,24 +23,32 @@ export default function Tree(props) {
         );
     }
     return tree.map((child) => (
-        <Node key={nanoid()} text={child.text} nested={child.children} />
+        <Node key={nanoid()} text={child.text} nested={child.children} link={child.link} />
     ));
 }
 
 function Node(props) {
     const [childCollapsed, setChildCollapsed] = useState(false);
 
-    const { text, nested } = props;
+    const { text, nested, link } = props;
 
     const toggleState = (e) => {
         e.stopPropagation();
         setChildCollapsed(!childCollapsed);
     };
+
+    let NodeText;
+
+    if (link === '') {
+        NodeText = (text);
+    } else {
+        NodeText = <Link to={link}>{text}</Link>;
+    }
     return (
         <NodeUI key={nanoid()} className="node" onClick={toggleState} onKeyDown={toggleState} role="presentation">
             &gt;
             {' '}
-            {text}
+            {NodeText}
             {nested.length > 0 && !childCollapsed && (
                 <NodeChildren className="node-children">
                     <Tree tree={nested} />
@@ -62,7 +71,9 @@ Tree.propTypes = propType;
 Node.propTypes = {
     text: propTypes.string.isRequired,
     nested: propTypes.arrayOf(propTypes.shape(nodeType)),
+    link: propTypes.string,
 };
 Node.defaultProps = {
     nested: [],
+    link: '',
 };
