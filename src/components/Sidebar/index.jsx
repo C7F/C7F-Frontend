@@ -31,7 +31,7 @@ export default function Sidebar() {
     return (
         <SidebarDiv>
             <h2>C7F2020</h2>
-            <Countdown date="9/10/2020" />
+            <Countdown date={+new Date('9/10/2020')} />
             <Tree tree={[
                 {
                     text: 'Home',
