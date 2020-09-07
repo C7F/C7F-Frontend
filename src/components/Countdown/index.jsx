@@ -7,12 +7,14 @@ export default function Countdown({ date }) {
         const difference = +new Date(date) - +new Date();
         let timeLeft = {};
 
+        const padTime = (time) => Math.floor(time).toString().padStart(2, '0');
+
         if (difference > 0) {
             timeLeft = {
-                days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-                hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-                minutes: Math.floor((difference / 1000 / 60) % 60),
-                seconds: Math.floor((difference / 1000) % 60),
+                days: padTime(difference / (1000 * 60 * 60 * 24)),
+                hours: padTime((difference / (1000 * 60 * 60)) % 24),
+                minutes: padTime((difference / 1000 / 60) % 60),
+                seconds: padTime((difference / 1000) % 60),
             };
         }
 
@@ -37,7 +39,7 @@ export default function Countdown({ date }) {
 
         timerComponents.push(
             <span key={nanoid()}>
-                {timeLeft[interval].toString().padStart(2, '0')}
+                {timeLeft[interval]}
                 {interval[0]}
                 {' '}
             </span>,
