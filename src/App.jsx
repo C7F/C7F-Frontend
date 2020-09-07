@@ -19,8 +19,6 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Challenge from './pages/Challenge';
-import TokenLogin from './pages/TokenLogin';
-
 import Sidebar from './components/Sidebar';
 import { getTheme } from './slices/themeSlice';
 
@@ -48,9 +46,6 @@ function App() {
                                 </Route>
                                 <Route path="/login">
                                     <Login />
-                                </Route>
-                                <Route path="/tokenLogin">
-                                    <TokenLogin />
                                 </Route>
                                 <Route path="/challenge/:id">
                                     <Challenge />

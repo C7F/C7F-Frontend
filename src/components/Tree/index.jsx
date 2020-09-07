@@ -1,6 +1,7 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import styled from 'styled-components';
+import { Link, BrowserRouter as Router } from 'react-router-dom';
 
 import { nanoid } from '@reduxjs/toolkit';
 
@@ -19,14 +20,18 @@ export default function Tree(props) {
         );
     }
     return tree.map((child) => (
-        <div key={nanoid()} className="node">
-            &gt;
-            {' '}
-            {child.text}
-            <NodeChildren className="node-children">
-                <Tree tree={child.children} />
-            </NodeChildren>
-        </div>
+        <Router>
+            <div key={nanoid()} className="node">
+                &gt;
+                {' '}
+
+                <Link to={child.link}>{child.text}</Link>
+
+                <NodeChildren className="node-children">
+                    <Tree tree={child.children} />
+                </NodeChildren>
+            </div>
+        </Router>
     ));
 }
 
