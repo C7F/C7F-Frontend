@@ -9,7 +9,7 @@ export default function Sidebar() {
     return (
         <div>
             <Nav
-                className="d-md-block bg-dark sidebar"
+                className="d-md-block bg-transparent sidebar"
             >
                 <Nav.Link href="/">
                     <Navbar.Brand className="text-light">C7F</Navbar.Brand>
