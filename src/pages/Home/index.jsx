@@ -62,16 +62,16 @@ export default function Home() {
                 </Heading2>
                 <p>
                     We have challenges of various categories including:
-                    <ul>
-                        <li>Pwn</li>
-                        <li>Web</li>
-                        <li>Steg</li>
-                        <li>Misc</li>
-                        <li>Linux</li>
-                        <li>Crypto</li>
-                        <li>Reversing</li>
-                    </ul>
                 </p>
+                <ul>
+                    <li>Pwn</li>
+                    <li>Web</li>
+                    <li>Steg</li>
+                    <li>Misc</li>
+                    <li>Linux</li>
+                    <li>Crypto</li>
+                    <li>Reversing</li>
+                </ul>
                 <Heading2 type="primary">
                     <Typist
                         avgTypingDelay={20}
@@ -85,10 +85,10 @@ export default function Home() {
                     The flag is in the following format:
                     <br />
                     <br />
-                    <Highlight>
-                        {'C7F{some_string_here}'}
-                    </Highlight>
                 </p>
+                <Highlight>
+                    {'C7F{some_string_here}'}
+                </Highlight>
                 <Heading2 type="primary">
                     <Typist
                         avgTypingDelay={40}
@@ -100,13 +100,13 @@ export default function Home() {
                 </Heading2>
                 <p>
                     C7F2020 is sponsored by:
-                    <ul>
-                        <li>Google Cloud</li>
-                        <li>HackTheBox</li>
-                        <li>TryHackMe</li>
-                        <li>Trail of Bits</li>
-                    </ul>
                 </p>
+                <ul>
+                    <li>Google Cloud</li>
+                    <li>HackTheBox</li>
+                    <li>TryHackMe</li>
+                    <li>Trail of Bits</li>
+                </ul>
             </article>
         </div>
 
