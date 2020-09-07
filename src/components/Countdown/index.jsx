@@ -37,7 +37,7 @@ export default function Countdown({ date }) {
 
         timerComponents.push(
             <span key={nanoid()}>
-                {timeLeft[interval]}
+                {timeLeft[interval].toString().padStart('2', 0)}
                 {interval[0]}
                 {' '}
             </span>,
