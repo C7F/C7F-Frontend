@@ -19,6 +19,8 @@ const SidebarDiv = styled.div`
     font-size: 1rem;
     padding: 1.5rem;
     border-right: 1px solid ${(props) => props.theme.fgColor};
+    position:fixed;
+    width: 20vw;
 `;
 
 export default function Sidebar() {
