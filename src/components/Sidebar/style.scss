@@ -1,11 +1,8 @@
-.sidebar {
-    height: 100vh;
-    overflow-y: auto;
-    border-right: 1px solid white;
-    font-size: 1rem;
-    padding: 1.5rem;
-}
-
 h2 {
     margin-bottom: 0;
+}
+
+.themeSelector {
+    position: absolute;
+    bottom: 1rem;
 }

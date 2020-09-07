@@ -1,10 +1,24 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import styled from 'styled-components';
 
 import Tree from '../Tree';
 import Countdown from '../Countdown';
 import './style.scss';
 import { getThemeNames, getTheme, themeUpdate } from '../../slices/themeSlice';
+
+const ThemeSelector = styled.select`
+    color: ${(props) => props.theme.fgColor};
+    background-color: ${(props) => props.theme.bgColor};
+`;
+
+const SidebarDiv = styled.div`
+    height: 100vh;
+    overflow-y: auto;
+    font-size: 1rem;
+    padding: 1.5rem;
+    border-right: 1px solid ${(props) => props.theme.fgColor};
+`;
 
 export default function Sidebar() {
     const themes = getThemeNames();
@@ -15,13 +29,9 @@ export default function Sidebar() {
         dispatch(themeUpdate(e.target.value));
     };
     return (
-        <div className="sidebar">
+        <SidebarDiv>
             <h2>C7F2020</h2>
             <Countdown date="9/10/2020" />
-            <label htmlFor="themeSelect" className="mt-2">Theme</label>
-            <select value={theme.name} id="themeSelect" onChange={themeSelect} className="ml-2">
-                {themes.map((name) => (<option value={name}>{name}</option>))}
-            </select>
             <Tree tree={[
                 {
                     text: 'Home',
@@ -72,6 +82,12 @@ export default function Sidebar() {
                     ],
                 }]}
             />
-        </div>
+            <div className="themeSelector">
+                <label htmlFor="themeSelect" className="mt-2">Theme</label>
+                <ThemeSelector value={theme.name} id="themeSelect" onChange={themeSelect} className="ml-2">
+                    {themes.map((name) => (<option value={name}>{name}</option>))}
+                </ThemeSelector>
+            </div>
+        </SidebarDiv>
     );
 }
