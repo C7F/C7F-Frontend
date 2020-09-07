@@ -7,6 +7,7 @@ import './style.scss';
 export default function Sidebar() {
     return (
         <div className="sidebar">
+            <h2>C7F2020</h2>
             <Tree tree={[
                 {
                     text: 'Home',

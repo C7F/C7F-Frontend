@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import propTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -10,24 +10,43 @@ const NodeChildren = styled.div`
     margin-top: 1rem;
 `;
 
+const NodeUI = styled.div`
+    cursor: pointer;
+`;
+
 export default function Tree(props) {
     const { tree } = props;
-    console.log(tree);
     if (!tree) {
         return (
             <></>
         );
     }
     return tree.map((child) => (
-        <div key={nanoid()} className="node">
+        <Node key={nanoid()} text={child.text} nested={child.children} />
+    ));
+}
+
+function Node(props) {
+    const [childCollapsed, setChildCollapsed] = useState(false);
+
+    const { text, nested } = props;
+
+    const toggleState = (e) => {
+        e.stopPropagation();
+        setChildCollapsed(!childCollapsed);
+    };
+    return (
+        <NodeUI key={nanoid()} className="node" onClick={toggleState} onKeyDown={toggleState} role="presentation">
             &gt;
             {' '}
-            {child.text}
-            <NodeChildren className="node-children">
-                <Tree tree={child.children} />
-            </NodeChildren>
-        </div>
-    ));
+            {text}
+            {nested.length > 0 && !childCollapsed && (
+                <NodeChildren className="node-children">
+                    <Tree tree={nested} />
+                </NodeChildren>
+            )}
+        </NodeUI>
+    );
 }
 
 const nodeType = {
@@ -40,3 +59,10 @@ const propType = {
 };
 
 Tree.propTypes = propType;
+Node.propTypes = {
+    text: propTypes.string.isRequired,
+    nested: propTypes.arrayOf(propTypes.shape(nodeType)),
+};
+Node.defaultProps = {
+    nested: [],
+};
