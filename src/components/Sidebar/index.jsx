@@ -1,14 +1,13 @@
 import React from 'react';
-import { Navbar, Nav } from 'react-bootstrap';
 
-import Countdown from '../Countdown';
+import Tree from '../Tree';
 
 import './style.scss';
 
 export default function Sidebar() {
     return (
         <div>
-            <Nav
+            {/* <Nav
                 className="d-md-block bg-dark sidebar"
             >
                 <Nav.Link href="/">
@@ -27,7 +26,48 @@ export default function Sidebar() {
                     <Nav.Link href="/challenge/1" className="text-light">Challenges</Nav.Link>
                 </Nav.Item>
                 <Countdown date={+new Date('10/1/2020')} />
-            </Nav>
+            </Nav> */}
+            <Tree tree={[
+                {
+                    text: 'Home',
+                }, {
+                    text: 'Login',
+                }, {
+                    text: 'Register',
+                }, {
+                    text: 'Challenges',
+                    children: [
+                        {
+                            text: 'Pwn',
+                            children: [
+                                {
+                                    text: 'pwn-intended-0x1',
+                                },
+                                {
+                                    text: 'pwn-intended-0x2',
+                                },
+                                {
+                                    text: 'pwn-intended-0x3',
+                                },
+                            ],
+                        },
+                        {
+                            text: 'Web',
+                            children: [
+                                {
+                                    text: 'Oreo',
+                                },
+                                {
+                                    text: 'File-Library',
+                                },
+                                {
+                                    text: 'Cascade',
+                                },
+                            ],
+                        },
+                    ],
+                }]}
+            />
         </div>
     );
 }
