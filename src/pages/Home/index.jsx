@@ -8,7 +8,7 @@ import { Heading1, Heading2 } from '../../components/Heading';
 export default function Home() {
     return (
         <div>
-            <Heading1>
+            <Heading1 type="error">
                 <Typist cursor={{ hideWhenDone: true, hideWhenDoneDelay: 300 }}>
                     Hey!
                     <Typist.Backspace count={4} delay={500} />
@@ -17,7 +17,7 @@ export default function Home() {
             </Heading1>
             <article className="home-description">
                 <p>Team C7F is hosting a another CTF!</p>
-                <Heading2>
+                <Heading2 type="primary">
                     When?
                 </Heading2>
                 <p>
@@ -30,11 +30,11 @@ export default function Home() {
                     {' '}
                     {new Date('11/10/2020').toString()}
                 </p>
-                <Heading2>Where?</Heading2>
+                <Heading2 type="primary">Where?</Heading2>
                 <p>
                     The CTF is online and anyone can take part in it!
                 </p>
-                <Heading2>What?</Heading2>
+                <Heading2 type="primary">What?</Heading2>
                 <p>
                     We have challenges of various categories including:
                     <ul>
@@ -47,7 +47,7 @@ export default function Home() {
                         <li>Reversing</li>
                     </ul>
                 </p>
-                <Heading2>Flag format?</Heading2>
+                <Heading2 type="primary">Flag format?</Heading2>
                 <p>
                     The flag is in the following format:
                     <br />
@@ -56,7 +56,7 @@ export default function Home() {
                         {'C7F{some_string_here}'}
                     </Highlight>
                 </p>
-                <Heading2>Sponsors</Heading2>
+                <Heading2 type="primary">Sponsors</Heading2>
                 <p>
                     C7F2020 is sponsored by:
                     <ul>
