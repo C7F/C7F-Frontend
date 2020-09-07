@@ -7,12 +7,13 @@ import { nanoid } from '@reduxjs/toolkit';
 
 const NodeChildren = styled.div`
     padding-left: 1rem;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
 `;
 
 const NodeUI = styled.div`
     cursor: pointer;
+    user-select: none;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
 `;
 
 export default function Tree(props) {
