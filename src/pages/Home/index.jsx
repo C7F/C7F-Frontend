@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.scss';
 import Typist from 'react-typist';
+import Highlight from '../../components/Highlight';
 
 export default function Home() {
     return (
@@ -49,9 +50,9 @@ export default function Home() {
                     The flag is in the following format:
                     <br />
                     <br />
-                    <code>
+                    <Highlight>
                         {'C7F{some_string_here}'}
-                    </code>
+                    </Highlight>
                 </p>
                 <h2>Sponsors</h2>
                 <p>
