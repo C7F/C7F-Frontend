@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Tree from '../Tree';
+import Countdown from '../Countdown';
 
 import './style.scss';
 
@@ -8,6 +9,7 @@ export default function Sidebar() {
     return (
         <div className="sidebar">
             <h2>C7F2020</h2>
+            <Countdown date="10/1/2020" />
             <Tree tree={[
                 {
                     text: 'Home',
