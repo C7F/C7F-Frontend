@@ -24,7 +24,7 @@ const THEMES = {
     'atom-one-dark': {
         fgColor: '#ABB2BF',
         bgColor: '#282C34',
-        dark: '#A375BD',
+        dark: '#E06C75',
         primary: '#5FA5D6',
         primText: '#FFFFFF',
         error: '#E06C75',
