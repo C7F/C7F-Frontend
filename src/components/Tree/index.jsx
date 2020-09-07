@@ -6,6 +6,8 @@ import { nanoid } from '@reduxjs/toolkit';
 
 const NodeChildren = styled.div`
     padding-left: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
 `;
 
 export default function Tree(props) {
@@ -19,6 +21,7 @@ export default function Tree(props) {
     return tree.map((child) => (
         <div key={nanoid()} className="node">
             &gt;
+            {' '}
             {child.text}
             <NodeChildren className="node-children">
                 <Tree tree={child.children} />
