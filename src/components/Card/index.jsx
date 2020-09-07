@@ -19,7 +19,7 @@ function Header(props) {
     const { children, className } = props;
     return (
         <CardHeader className={`${className}`}>
-            <Typist avgTypingDelay={150} cursor={{ hideWhenDone: true, hideWhenDoneDelay: 300 }}>
+            <Typist avgTypingDelay={50} cursor={{ hideWhenDone: true, hideWhenDoneDelay: 300 }}>
                 {children}
             </Typist>
         </CardHeader>
