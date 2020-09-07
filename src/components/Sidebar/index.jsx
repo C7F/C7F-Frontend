@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
+import { nanoid } from '@reduxjs/toolkit';
 
 import Tree from '../Tree';
 import Countdown from '../Countdown';
@@ -85,7 +86,7 @@ export default function Sidebar() {
             <div className="themeSelector">
                 <label htmlFor="themeSelect" className="mt-2">Theme</label>
                 <ThemeSelector value={theme.name} id="themeSelect" onChange={themeSelect} className="ml-2">
-                    {themes.map((name) => (<option value={name}>{name}</option>))}
+                    {themes.map((name) => (<option value={name} key={nanoid()}>{name}</option>))}
                 </ThemeSelector>
             </div>
         </SidebarDiv>
