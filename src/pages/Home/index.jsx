@@ -9,17 +9,23 @@ export default function Home() {
     return (
         <div>
             <Heading1 type="error">
-                <Typist cursor={{ hideWhenDone: true, hideWhenDoneDelay: 300 }}>
+                <Typist
+                    avgTypingDelay={40}
+                    cursor={{ hideWhenDone: true, hideWhenDoneDelay: 300 }}
+                >
                     Hey!
-                    <Typist.Backspace count={4} delay={500} />
+                    <Typist.Backspace count={4} delay={300} />
                     Welcome to C7F2020
                 </Typist>
             </Heading1>
             <article className="home-description">
                 <p>Team C7F is hosting a another CTF!</p>
                 <Heading2 type="primary">
-                    <Typist cursor={{ hideWhenDone: true, hideWhenDoneDelay: 300 }}>
-                        <Typist.Delay ms={3000} />
+                    <Typist
+                        avgTypingDelay={40}
+                        cursor={{ hideWhenDone: true, hideWhenDoneDelay: 300 }}
+                    >
+                        <Typist.Delay ms={2000} />
                         When?
                     </Typist>
                 </Heading2>
@@ -34,8 +40,11 @@ export default function Home() {
                     {new Date('11/10/2020').toString()}
                 </p>
                 <Heading2 type="primary">
-                    <Typist cursor={{ hideWhenDone: true, hideWhenDoneDelay: 300 }}>
-                        <Typist.Delay ms={3500} />
+                    <Typist
+                        avgTypingDelay={40}
+                        cursor={{ hideWhenDone: true, hideWhenDoneDelay: 300 }}
+                    >
+                        <Typist.Delay ms={2200} />
                         Where?
                     </Typist>
                 </Heading2>
@@ -43,8 +52,11 @@ export default function Home() {
                     The CTF is online and anyone can take part in it!
                 </p>
                 <Heading2 type="primary">
-                    <Typist cursor={{ hideWhenDone: true, hideWhenDoneDelay: 300 }}>
-                        <Typist.Delay ms={4000} />
+                    <Typist
+                        avgTypingDelay={40}
+                        cursor={{ hideWhenDone: true, hideWhenDoneDelay: 300 }}
+                    >
+                        <Typist.Delay ms={2400} />
                         What?
                     </Typist>
                 </Heading2>
@@ -61,8 +73,11 @@ export default function Home() {
                     </ul>
                 </p>
                 <Heading2 type="primary">
-                    <Typist cursor={{ hideWhenDone: true, hideWhenDoneDelay: 300 }}>
-                        <Typist.Delay ms={4500} />
+                    <Typist
+                        avgTypingDelay={20}
+                        cursor={{ hideWhenDone: true, hideWhenDoneDelay: 300 }}
+                    >
+                        <Typist.Delay ms={2600} />
                         Flag format?
                     </Typist>
                 </Heading2>
@@ -75,8 +90,11 @@ export default function Home() {
                     </Highlight>
                 </p>
                 <Heading2 type="primary">
-                    <Typist cursor={{ hideWhenDone: true, hideWhenDoneDelay: 300 }}>
-                        <Typist.Delay ms={5000} />
+                    <Typist
+                        avgTypingDelay={40}
+                        cursor={{ hideWhenDone: true, hideWhenDoneDelay: 300 }}
+                    >
+                        <Typist.Delay ms={2800} />
                         Sponsors
                     </Typist>
                 </Heading2>
