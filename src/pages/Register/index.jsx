@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import Card from '../../components/Card';
 import Error from '../../components/Error';
 import Button from '../../components/Button';
+import TerminalInput from '../../components/Input';
 
 import {
     validateEmail,
@@ -60,7 +61,7 @@ export default function Register() {
                         <Error>{error}</Error>
                         <div className="form-group">
                             <label htmlFor="email">Email address</label>
-                            <input id="email" type="email" value={email} onChange={changeEmail} placeholder="Enter email" required />
+                            <TerminalInput id="email" type="email" value={email} onChange={changeEmail} placeholder="Enter email" required />
                             <small className="text-muted">
                                 You will receive a verification email.
                             </small>
@@ -68,12 +69,12 @@ export default function Register() {
 
                         <div className="form-group">
                             <label htmlFor="registerEmail">Team name</label>
-                            <input id="registerEmail" type="text" value={teamName} onChange={changeTeamName} placeholder="Enter team name" required />
+                            <TerminalInput id="registerEmail" type="text" value={teamName} onChange={changeTeamName} placeholder="Enter team name" required />
                         </div>
 
                         <div className="form-group">
                             <label htmlFor="registerPassword">Password</label>
-                            <input id="registerPassword" type="password" value={password} onChange={changePassword} placeholder="Password" required />
+                            <TerminalInput id="registerPassword" type="password" value={password} onChange={changePassword} placeholder="Password" required />
                         </div>
 
                         <Button btnType="primary" type="submit" blockLevel>

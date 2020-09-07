@@ -11,6 +11,10 @@ const CardHeader = styled.header`
     background-color: ${(props) => props.theme.dark} !important;
 `;
 
+const CardBody = styled.div`
+    font-size: 1rem;
+`;
+
 function Header(props) {
     const { children, className } = props;
     return (
@@ -25,7 +29,7 @@ function Header(props) {
 function Body(props) {
     const { children, className } = props;
     return (
-        <div className={className}>{children}</div>
+        <CardBody className={className}>{children}</CardBody>
     );
 }
 

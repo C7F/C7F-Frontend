@@ -6,6 +6,7 @@ import { unwrapResult } from '@reduxjs/toolkit';
 import Card from '../../components/Card';
 import Error from '../../components/Error';
 import Button from '../../components/Button';
+import TerminalInput from '../../components/Input';
 
 import './style.scss';
 
@@ -61,14 +62,14 @@ export default function Login() {
                             <label htmlFor="teamName">
                                 Team name
                             </label>
-                            <input id="teamName" type="text" value={teamName} onChange={changeTeamName} placeholder="Enter team name" required />
+                            <TerminalInput id="teamName" type="text" value={teamName} onChange={changeTeamName} placeholder="Enter team name" required />
                         </div>
 
                         <div className="form-group">
                             <label htmlFor="password">
                                 Password
                             </label>
-                            <input id="password" type="password" value={password} onChange={changePassword} placeholder="Password" required />
+                            <TerminalInput id="password" type="password" value={password} onChange={changePassword} placeholder="Password" required />
                         </div>
                         <Button btnType="primary" type="submit" blockLevel>
                             Login
