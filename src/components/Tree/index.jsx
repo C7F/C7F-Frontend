@@ -47,7 +47,7 @@ function Node(props) {
     }
     return (
         <NodeUI key={nanoid()} className="node" onClick={toggleState} onKeyDown={toggleState} role="presentation">
-            &gt;
+            {(childCollapsed || nested.length === 0) ? '▶' : '▼'}
             {' '}
             {NodeText}
             {nested.length > 0 && !childCollapsed && (
