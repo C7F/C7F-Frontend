@@ -20,6 +20,7 @@ export default function Home() {
             </Heading1>
             <article className="home-description">
                 <div>Team C7F is hosting a another CTF!</div>
+                <br />
                 <Heading2 type="primary">
                     <Typist
                         avgTypingDelay={40}
