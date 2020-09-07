@@ -73,11 +73,19 @@ const THEMES = {
     },
 };
 
+const getInitialTheme = () => {
+    const currentTheme = localStorage.getItem('theme');
+    if (!currentTheme || !THEMES[currentTheme]) {
+        return 'atom-one-dark';
+    }
+    return currentTheme;
+};
+
 const themeSlice = createSlice({
     name: 'theme',
     initialState: {
-        name: 'atom-one-dark',
-        ...THEMES['atom-one-dark'],
+        name: getInitialTheme(),
+        ...THEMES[getInitialTheme()],
     },
     reducers: {
         themeUpdate(state, action) {
@@ -85,6 +93,7 @@ const themeSlice = createSlice({
                 name: action.payload,
                 ...THEMES[action.payload],
             };
+            localStorage.setItem('theme', action.payload);
             return state;
         },
     },
