@@ -24,6 +24,16 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "SamSan123",
+      "name": "Sanyam Agrawal",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/43850709?v=4",
+      "profile": "https://github.com/SamSan123",
+      "contributions": [
+        "code",
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
