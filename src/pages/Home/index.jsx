@@ -25,7 +25,7 @@ export default function Home() {
                         avgTypingDelay={40}
                         cursor={{ hideWhenDone: true, hideWhenDoneDelay: 300 }}
                     >
-                        <Typist.Delay ms={2000} />
+                        <Typist.Delay ms={1700} />
                         When?
                     </Typist>
                 </Heading2>
@@ -44,7 +44,7 @@ export default function Home() {
                         avgTypingDelay={40}
                         cursor={{ hideWhenDone: true, hideWhenDoneDelay: 300 }}
                     >
-                        <Typist.Delay ms={2200} />
+                        <Typist.Delay ms={1900} />
                         Where?
                     </Typist>
                 </Heading2>
@@ -56,7 +56,7 @@ export default function Home() {
                         avgTypingDelay={40}
                         cursor={{ hideWhenDone: true, hideWhenDoneDelay: 300 }}
                     >
-                        <Typist.Delay ms={2400} />
+                        <Typist.Delay ms={2100} />
                         What?
                     </Typist>
                 </Heading2>
@@ -77,7 +77,7 @@ export default function Home() {
                         avgTypingDelay={20}
                         cursor={{ hideWhenDone: true, hideWhenDoneDelay: 300 }}
                     >
-                        <Typist.Delay ms={2600} />
+                        <Typist.Delay ms={2300} />
                         Flag format?
                     </Typist>
                 </Heading2>
@@ -94,7 +94,7 @@ export default function Home() {
                         avgTypingDelay={40}
                         cursor={{ hideWhenDone: true, hideWhenDoneDelay: 300 }}
                     >
-                        <Typist.Delay ms={2800} />
+                        <Typist.Delay ms={2500} />
                         Sponsors
                     </Typist>
                 </Heading2>
