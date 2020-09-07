@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import propTypes from 'prop-types';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-
 import { nanoid } from '@reduxjs/toolkit';
+
+import RouterLink from '../RouterLink';
 
 const NodeChildren = styled.div`
     padding-left: 1rem;
@@ -43,7 +43,7 @@ function Node(props) {
     if (link === '') {
         NodeText = (text);
     } else {
-        NodeText = <Link to={link}>{text}</Link>;
+        NodeText = <RouterLink to={link}>{text}</RouterLink>;
     }
     return (
         <NodeUI key={nanoid()} className="node" onClick={toggleState} onKeyDown={toggleState} role="presentation">
