@@ -1,15 +1,27 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
 import Tree from '../Tree';
 import Countdown from '../Countdown';
-
 import './style.scss';
+import { getThemeNames, getTheme, themeUpdate } from '../../slices/themeSlice';
 
 export default function Sidebar() {
+    const themes = getThemeNames();
+    const theme = useSelector(getTheme);
+
+    const dispatch = useDispatch();
+    const themeSelect = (e) => {
+        dispatch(themeUpdate(e.target.value));
+    };
     return (
         <div className="sidebar">
             <h2>C7F2020</h2>
             <Countdown date="9/10/2020" />
+            <label htmlFor="themeSelect" className="mt-2">Theme</label>
+            <select value={theme.name} id="themeSelect" onChange={themeSelect} className="ml-2">
+                {themes.map((name) => (<option value={name}>{name}</option>))}
+            </select>
             <Tree tree={[
                 {
                     text: 'Home',

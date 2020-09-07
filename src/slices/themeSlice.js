@@ -85,6 +85,7 @@ const themeSlice = createSlice({
                 name: action.payload,
                 ...THEMES[action.payload],
             };
+            return state;
         },
     },
 });
@@ -92,5 +93,7 @@ const themeSlice = createSlice({
 export const { themeUpdate } = themeSlice.actions;
 
 export const getTheme = (state) => state.theme;
+
+export const getThemeNames = () => Object.keys(THEMES);
 
 export default themeSlice.reducer;
