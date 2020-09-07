@@ -38,13 +38,8 @@ function Node(props) {
         setChildCollapsed(!childCollapsed);
     };
 
-    let NodeText;
+    const NodeText = link ? <RouterLink to={link}>{text}</RouterLink> : text;
 
-    if (link === '') {
-        NodeText = (text);
-    } else {
-        NodeText = <RouterLink to={link}>{text}</RouterLink>;
-    }
     return (
         <NodeUI key={nanoid()} className="node" onClick={toggleState} onKeyDown={toggleState} role="presentation">
             {(childCollapsed || nested.length === 0) ? '▶' : '▼'}
