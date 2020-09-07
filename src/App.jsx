@@ -30,6 +30,7 @@ const Page = styled.div`
     overflow-y: auto;
     overflow-x: hidden;
     word-wrap: break-word;
+    padding-right: 2rem;
 `;
 
 function App() {
