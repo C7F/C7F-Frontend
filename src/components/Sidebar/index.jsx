@@ -5,13 +5,15 @@ import { nanoid } from '@reduxjs/toolkit';
 
 import Tree from '../Tree';
 import Countdown from '../Countdown';
-import './style.scss';
-import { getThemeNames, getTheme, themeUpdate } from '../../slices/themeSlice';
+
 import { selectTeam } from '../../slices/teamSlice';
+import { getThemeNames, getTheme, themeUpdate } from '../../slices/themeSlice';
+
+import './style.scss';
 
 const ThemeSelector = styled.select`
-    color: ${(props) => props.theme.fgColor};
-    background-color: ${(props) => props.theme.bgColor};
+color: ${(props) => props.theme.fgColor};
+background-color: ${(props) => props.theme.bgColor};
 `;
 
 const SidebarDiv = styled.div`
@@ -87,11 +89,35 @@ export default function Sidebar() {
     };
 
     useEffect(() => {
-        if (team.loggedIn && !sidebarTree.filter((item) => item.text === 'Challenges').length) {
+        const isChallengesInTree = sidebarTree.filter((item) => item.text === 'Challenges').length;
+        const showChallenges = team.loggedIn && !isChallengesInTree;
+        const hideChallenges = !team.loggedIn && isChallengesInTree;
+
+        if (showChallenges) {
             setSidebarTree(
                 (tree) => tree.filter(
                     (item) => !['Login', 'Register'].includes(item.text),
-                ).concat(challengeTree),
+                )
+                    .concat(challengeTree)
+                    .concat({
+                        text: 'Logout',
+                        link: '/logout',
+                    }),
+            );
+        } else if (hideChallenges) {
+            setSidebarTree(
+                [
+                    {
+                        text: 'Home',
+                        link: '/',
+                    }, {
+                        text: 'Login',
+                        link: '/login',
+                    }, {
+                        text: 'Register',
+                        link: '/register',
+                    },
+                ],
             );
         }
     }, [team, challengeTree, sidebarTree, setSidebarTree]);
