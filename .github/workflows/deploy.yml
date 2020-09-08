@@ -19,7 +19,7 @@ jobs:
         echo "::set-env name=PUBLIC_URL::/$(basename $(pwd))"
         npm install
         npm run lint:fix
-        npm run build
+        echo $PUBLIC_URL && npm run build
       env:
         REACT_APP_BASE_URL: https://backend-is-not-deployed
       
