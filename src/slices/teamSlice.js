@@ -31,12 +31,14 @@ const teamSlice = createSlice({
                 return;
             }
             state.token = action.payload;
+            state.loggedIn = true;
         },
         [fetchTokenUsingToken.fulfilled]: (state, action) => {
             if (action.error) {
                 return;
             }
             state.token = action.payload;
+            state.loggedIn = true;
         },
     },
 });
