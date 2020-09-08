@@ -27,10 +27,9 @@ export default function Highlight(props) {
     };
 
     useEffect(() => {
+        require(`highlight.js/styles/${theme.name}.css`);
         highlight(codeNode);
     });
-
-    require(`highlight.js/styles/${theme.name}.css`);
 
     return (
         <>
