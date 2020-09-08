@@ -14,12 +14,14 @@ jobs:
         node-version: 12
         registry-url: https://registry.npmjs.org/
 
+    - name: Set React environment using current directory
+      run: echo "::set-env name=PUBLIC_URL::/$(basename $(pwd))" 
+
     - name: npm install, lint
       run: |
-        echo "::set-env name=PUBLIC_URL::/$(basename $(pwd))"
         npm install
         npm run lint:fix
-        echo $PUBLIC_URL && npm run build
+        npm run build
       env:
         REACT_APP_BASE_URL: https://backend-is-not-deployed
       
