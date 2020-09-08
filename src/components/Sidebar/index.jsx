@@ -30,7 +30,8 @@ export default function Sidebar() {
     const themes = getThemeNames();
     const theme = useSelector(getTheme);
     const team = useSelector(selectTeam);
-    const [sidebarTree, setSidebarTree] = useState([
+
+    const defaultTree = [
         {
             text: 'Home',
             link: '/',
@@ -41,12 +42,7 @@ export default function Sidebar() {
             text: 'Register',
             link: '/register',
         },
-    ]);
-
-    const dispatch = useDispatch();
-    const themeSelect = (e) => {
-        dispatch(themeUpdate(e.target.value));
-    };
+    ];
 
     const challengeTree = {
         text: 'Challenges',
@@ -88,6 +84,13 @@ export default function Sidebar() {
         ],
     };
 
+    const [sidebarTree, setSidebarTree] = useState(defaultTree);
+
+    const dispatch = useDispatch();
+    const themeSelect = (e) => {
+        dispatch(themeUpdate(e.target.value));
+    };
+
     useEffect(() => {
         const isChallengesInTree = sidebarTree.filter((item) => item.text === 'Challenges').length;
         const showChallenges = team.loggedIn && !isChallengesInTree;
@@ -106,21 +109,10 @@ export default function Sidebar() {
             );
         } else if (hideChallenges) {
             setSidebarTree(
-                [
-                    {
-                        text: 'Home',
-                        link: '/',
-                    }, {
-                        text: 'Login',
-                        link: '/login',
-                    }, {
-                        text: 'Register',
-                        link: '/register',
-                    },
-                ],
+                defaultTree,
             );
         }
-    }, [team, challengeTree, sidebarTree, setSidebarTree]);
+    }, [team, challengeTree, sidebarTree, setSidebarTree, defaultTree]);
 
     return (
         <SidebarDiv>
