@@ -17,9 +17,12 @@ import 'terminal.css';
 
 import Home from './pages/Home';
 import Login from './pages/Login';
+import Logout from './pages/Logout';
 import Register from './pages/Register';
 import Challenge from './pages/Challenge';
+
 import Sidebar from './components/Sidebar';
+
 import { getTheme } from './slices/themeSlice';
 
 const Page = styled.div`
@@ -50,6 +53,9 @@ function App() {
                                 </Route>
                                 <Route path="/login">
                                     <Login />
+                                </Route>
+                                <Route path="/logout">
+                                    <Logout />
                                 </Route>
                                 <Route path="/challenge/:id">
                                     <Challenge />
