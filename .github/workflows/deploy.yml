@@ -19,6 +19,9 @@ jobs:
         npm install
         npm run lint:fix
         npm run build
+      env:
+        PUBLIC_URL: $(basename $(pwd))
+        REACT_APP_BASE_URL: https://backend-is-not-deployed
       
     - name: Deploy to github.io
       uses: JamesIves/github-pages-deploy-action@3.5.9
