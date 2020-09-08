@@ -36,6 +36,17 @@
         ],
         "no-console": 0,
         "no-underscore-dangle": 0,
-        "no-bitwise": 0
-    }
+        "no-bitwise": 0,
+        "jsx-a11y/label-has-associated-control": 0
+    },
+    "overrides": [
+        {
+            "files": [
+                "src/slices/**/*.js"
+            ],
+            "rules": {
+                "no-param-reassign": 0
+            }
+        }
+    ]
 }
