@@ -16,8 +16,6 @@
     "bootstrap": "^4.5.2",
     "classnames": "^2.2.6",
     "highlight.js": "^10.1.2",
-    "jqeury": "0.0.1-security",
-    "jquery": "^3.5.1",
     "node-sass": "^4.14.1",
     "popper.js": "^1.16.1",
     "prop-types": "^15.7.2",
