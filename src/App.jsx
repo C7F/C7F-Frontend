@@ -41,7 +41,7 @@ function App() {
     return (
         <ThemeProvider theme={theme}>
             <Page>
-                <Router>
+                <Router basename={process.env.PUBLIC_URL}>
                     <Row>
                         <Col md="3">
                             <Sidebar />
