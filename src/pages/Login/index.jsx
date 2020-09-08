@@ -33,7 +33,7 @@ export default function Login() {
     const dispatch = useDispatch();
     const history = useHistory();
 
-    const redirectToChallenges = () => history.push('/challenge');
+    const redirectToChallenges = () => history.push('/challenge/1');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
