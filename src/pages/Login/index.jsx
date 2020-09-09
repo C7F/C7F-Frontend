@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { unwrapResult } from '@reduxjs/toolkit';
 
 import Card from '../../components/Card';
@@ -10,7 +10,7 @@ import TerminalInput from '../../components/Input';
 
 import './style.scss';
 
-import { nameUpdate, fetchToken } from '../../slices/teamSlice';
+import { nameUpdate, fetchToken, selectTeam } from '../../slices/teamSlice';
 
 import {
     validateTeamName,
@@ -18,7 +18,8 @@ import {
 } from '../../utils/validation';
 
 export default function Login() {
-    const [teamName, setTeamName] = useState('');
+    const { name } = useSelector(selectTeam);
+    const [teamName, setTeamName] = useState(name);
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
 
@@ -33,7 +34,7 @@ export default function Login() {
     const dispatch = useDispatch();
     const history = useHistory();
 
-    const redirectToChallenges = () => history.push('/challenge');
+    const redirectToChallenges = () => history.push('/challenge/1');
 
     const handleSubmit = async (e) => {
         e.preventDefault();

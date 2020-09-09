@@ -1,0 +1,45 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "roerohan",
+      "name": "Rohan Mukherjee",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/42958812?v=4",
+      "profile": "https://github.com/roerohan",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "thebongy",
+      "name": "Rishit Bansal",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/7080652?v=4",
+      "profile": "https://github.com/thebongy",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "SamSan123",
+      "name": "Sanyam Agrawal",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/43850709?v=4",
+      "profile": "https://github.com/SamSan123",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "C7F-Frontend",
+  "projectOwner": "C7F",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
