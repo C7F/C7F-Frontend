@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-
 const THEMES = {
     dracula: {
         fgColor: '#f8f8f2',
