@@ -6,9 +6,10 @@ import propTypes from 'prop-types';
 
 import hljs from 'highlight.js';
 import markdown from 'highlight.js/lib/languages/markdown';
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 
-import { getTheme } from '../../slices/themeSlice';
+// import { getTheme } from '../../slices/themeSlice';
+import 'highlight.js/styles/dracula.css';
 
 hljs.registerLanguage('markdown', markdown);
 
@@ -21,13 +22,13 @@ export default function Highlight(props) {
     const { children } = props;
 
     const codeNode = React.createRef();
-    const theme = useSelector(getTheme);
+    // const theme = useSelector(getTheme);
     const highlight = () => {
         if (codeNode && codeNode.current && hljs.highlightBlock(codeNode.current));
     };
 
     useEffect(() => {
-        require(`highlight.js/styles/${theme.name}.css`);
+        // require(`highlight.js/styles/${theme.name}.css`);
         highlight(codeNode);
     });
 
