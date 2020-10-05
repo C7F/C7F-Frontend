@@ -1,0 +1,27 @@
+import { createSlice } from '@reduxjs/toolkit';
+import shortid from 'shortid';
+
+const initialState = [
+    {
+        id: shortid(),
+        type: '',
+        message: '',
+    },
+];
+
+const alertsSlice = createSlice({
+    name: 'alerts',
+    initialState,
+    reducers: {
+        addAlert(state, action) {
+            state.append(action.payload);
+        },
+        removeAlert(state, action) {
+            state.filter((item) => item.id !== action.payload);
+        },
+    },
+});
+
+export const selectAlerts = (state) => state.alerts;
+
+export default alertsSlice.reducer;
