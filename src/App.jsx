@@ -21,6 +21,7 @@ import Logout from './pages/Logout';
 import Register from './pages/Register';
 import Challenge from './pages/Challenge';
 
+import Alert from './components/Alert';
 import Sidebar from './components/Sidebar';
 
 import { getTheme } from './slices/themeSlice';
@@ -65,6 +66,7 @@ function App() {
                                 </Route>
                             </Switch>
                         </Col>
+                        <Alert />
                     </Row>
                 </Router>
             </Page>
