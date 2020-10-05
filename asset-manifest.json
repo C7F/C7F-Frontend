@@ -1,21 +1,20 @@
 {
   "files": {
     "main.css": "/C7F-Frontend/static/css/main.d500fff3.chunk.css",
-    "main.js": "/C7F-Frontend/static/js/main.94205f6b.chunk.js",
+    "main.js": "/C7F-Frontend/static/js/main.657c3912.chunk.js",
     "runtime-main.js": "/C7F-Frontend/static/js/runtime-main.72cf65c5.js",
-    "static/css/2.d28fc830.chunk.css": "/C7F-Frontend/static/css/2.d28fc830.chunk.css",
-    "static/js/2.b312e447.chunk.js": "/C7F-Frontend/static/js/2.b312e447.chunk.js",
+    "static/css/2.d73399ba.chunk.css": "/C7F-Frontend/static/css/2.d73399ba.chunk.css",
+    "static/js/2.ed59096d.chunk.js": "/C7F-Frontend/static/js/2.ed59096d.chunk.js",
     "index.html": "/C7F-Frontend/index.html",
-    "precache-manifest.a255659b65ca571dec146177ce364857.js": "/C7F-Frontend/precache-manifest.a255659b65ca571dec146177ce364857.js",
+    "precache-manifest.08fc0ba76ced08878d5853200049eab9.js": "/C7F-Frontend/precache-manifest.08fc0ba76ced08878d5853200049eab9.js",
     "service-worker.js": "/C7F-Frontend/service-worker.js",
-    "static/js/2.b312e447.chunk.js.LICENSE.txt": "/C7F-Frontend/static/js/2.b312e447.chunk.js.LICENSE.txt",
-    "static/media/brown-paper.css": "/C7F-Frontend/static/media/brown-papersq.82cd9f5d.png"
+    "static/js/2.ed59096d.chunk.js.LICENSE.txt": "/C7F-Frontend/static/js/2.ed59096d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.72cf65c5.js",
-    "static/css/2.d28fc830.chunk.css",
-    "static/js/2.b312e447.chunk.js",
+    "static/css/2.d73399ba.chunk.css",
+    "static/js/2.ed59096d.chunk.js",
     "static/css/main.d500fff3.chunk.css",
-    "static/js/main.94205f6b.chunk.js"
+    "static/js/main.657c3912.chunk.js"
   ]
 }
