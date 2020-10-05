@@ -26,7 +26,6 @@ export async function checkFlag({ flag }) {
         success,
         message,
         error,
-        correct,
         id,
     } = data;
 
@@ -34,7 +33,7 @@ export async function checkFlag({ flag }) {
         return { message, error };
     }
 
-    return { id, correct };
+    return id;
 }
 
 export async function getSolves({ id }) {
