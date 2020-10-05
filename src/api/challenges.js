@@ -17,23 +17,41 @@ export async function requestChallenges() {
     return categories;
 }
 
-export async function requestChallengeData({ id }) {
-    const { data } = await API.get('/challenges', {
-        params: {
-            id,
-        },
+export async function checkFlag({ flag }) {
+    const { data } = await API.post('/challenges/submit', {
+        flag,
     });
 
     const {
         success,
         message,
         error,
-        challenge,
+        correct,
+        id,
     } = data;
 
     if (!success) {
         return { message, error };
     }
 
-    return challenge;
+    return { id, correct };
+}
+
+export async function getSolves({ id }) {
+    const { data } = await API.post('/challenges/solves', {
+        id,
+    });
+
+    const {
+        success,
+        message,
+        error,
+        solves,
+    } = data;
+
+    if (!success) {
+        return { message, error };
+    }
+
+    return solves;
 }
