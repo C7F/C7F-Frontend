@@ -7,7 +7,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/C7F/repo">
-    <img src="TODO: insert logo" alt="Logo" width="80">
+    <img src="http://c7f.github.io/C7F-Frontend/C7F-dark.svg" alt="Logo" width="200">
   </a>
 
   <h3 align="center">C7F</h3>
