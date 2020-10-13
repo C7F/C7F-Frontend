@@ -1,2 +1,2 @@
-export { requestLogin, requestRegister, requestTokenLogin } from './auth';
-export { requestChallengeData, requestChallenges } from './challenges';
+export * from './auth';
+export * from './challenges';
