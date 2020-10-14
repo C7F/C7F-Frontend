@@ -29,7 +29,7 @@ export default function Tree(props) {
 }
 
 function Node(props) {
-    const [childCollapsed, setChildCollapsed] = useState(false);
+    const [childCollapsed, setChildCollapsed] = useState(true);
 
     const { text, nested, link } = props;
 
