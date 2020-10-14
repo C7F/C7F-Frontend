@@ -87,7 +87,7 @@ export default function Home() {
                     <br />
                     <br />
                     <Highlight>
-                        {'C7F{some_string_here}'}
+                        {'flag{some_string_here}'}
                     </Highlight>
                 </div>
                 <Heading2 type="primary">
