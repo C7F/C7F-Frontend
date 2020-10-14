@@ -3,20 +3,28 @@ import { requestChallenges } from '../api';
 
 export const fetchChallenges = createAsyncThunk(
     'challenges/fetchChallenges',
-    async () => requestChallenges(),
+    requestChallenges,
 );
 
 const challengesSlice = createSlice({
     name: 'challenges',
-    initialState: {},
+    initialState: {
+        challengeArray: [],
+        challengeTree: {},
+    },
     extraReducers: {
         [fetchChallenges.fulfilled]: (state, action) => {
             if (action.error) {
                 return;
             }
-            state = action.payload;
+            const { challenges, challengeTree } = action.payload;
+            state.challengeArray = challenges;
+            state.challengeTree = challengeTree;
         },
     },
 });
+
+export const selectChallengeTree = (state) => state.challenges.challengeTree;
+export const selectChallengeArray = (state) => state.challenges.challengeArray;
 
 export default challengesSlice.reducer;
