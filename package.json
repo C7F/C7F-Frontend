@@ -27,6 +27,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "react-seven-segment-display": "^2.1.0",
+    "react-transition-group": "^1.2.1",
     "react-typist": "^2.0.5",
     "redux": "^4.0.5",
     "shortid": "^2.2.15",

@@ -8,6 +8,14 @@ const CodeWrapper = styled.pre`
     font-size: 1rem;
 `;
 
+const MarkdownHeading = styled.h1`
+    color: ${(props) => props.theme.error};
+`;
+
+const MarkdownText = styled.p`
+    color: ${(props) => props.theme.fgColor};
+`;
+
 export default function Highlight(props) {
     const { children } = props;
 
@@ -16,6 +24,14 @@ export default function Highlight(props) {
             <CodeWrapper>
                 <ReactMarkdown
                     source={children}
+                    renderers={{
+                        heading: ({ children: child }) => (
+                            <MarkdownHeading>{child}</MarkdownHeading>
+                        ),
+                        paragraph: ({ children: child }) => (
+                            <MarkdownText>{child}</MarkdownText>
+                        ),
+                    }}
                 />
             </CodeWrapper>
         </>
