@@ -1,9 +1,14 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { requestChallenges } from '../api';
+import { requestChallenges, checkFlag } from '../api';
 
 export const fetchChallenges = createAsyncThunk(
     'challenges/fetchChallenges',
     requestChallenges,
+);
+
+export const submitFlag = createAsyncThunk(
+    'challenges/submitFlag',
+    checkFlag,
 );
 
 const challengesSlice = createSlice({

@@ -1,7 +1,9 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { selectChallengeArray } from '../../slices/challengesSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { unwrapResult } from '@reduxjs/toolkit';
+
+import { selectChallengeArray, submitFlag } from '../../slices/challengesSlice';
 
 import Highlight from '../../components/Highlight';
 import Input from '../../components/Input';
@@ -12,6 +14,7 @@ import './style.scss';
 export default function Challenge() {
     const { id } = useParams();
     const history = useHistory();
+    const dispatch = useDispatch();
     const challenges = useSelector(selectChallengeArray);
     const [currentChallenge, setCurrentChallenge] = useState('');
 
@@ -23,13 +26,18 @@ export default function Challenge() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        dispatch(submitFlag({ flag }))
+            .then(unwrapResult)
+            .then(console.log);
     };
 
     const makeChallenge = useCallback(() => {
         const currentChall = challenges.find((challenge) => challenge.id === id);
 
         if (!currentChall) {
-            return '';
+            return `# Challenge not found!
+
+Challenge does not exist. Please visit a valid URL.`;
         }
 
         return `# ${currentChall.name}

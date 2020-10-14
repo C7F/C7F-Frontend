@@ -34,7 +34,7 @@ export default function Login() {
     const dispatch = useDispatch();
     const history = useHistory();
 
-    const redirectToChallenges = () => history.push('/challenge/1');
+    const redirectToHome = () => history.push('/');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -42,7 +42,7 @@ export default function Login() {
         dispatch(nameUpdate(teamName));
         dispatch(fetchToken({ teamName, password }))
             .then(unwrapResult)
-            .then(redirectToChallenges)
+            .then(redirectToHome)
             .catch(() => {
                 setError('Login failed!');
             });
