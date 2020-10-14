@@ -7,14 +7,26 @@ export async function requestChallenges() {
         success,
         message,
         error,
-        categories,
+        challenges,
     } = data;
 
     if (!success) {
         return { message, error };
     }
 
-    return categories;
+    const challengeTree = [];
+
+    challenges.forEach((chall) => {
+        const { category } = chall;
+
+        if (!challengeTree[category]) {
+            challengeTree[category] = [];
+        }
+
+        challengeTree[category].push(chall);
+    });
+
+    return challengeTree;
 }
 
 export async function checkFlag({ flag }) {
