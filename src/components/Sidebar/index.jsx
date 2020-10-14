@@ -88,11 +88,11 @@ export default function Sidebar() {
             (tree) => tree.filter(
                 (item) => !['Login', 'Register'].includes(item.text),
             )
-                .concat(challengeTree)
                 .concat({
                     text: 'Logout',
                     link: '/logout',
-                }),
+                })
+                .concat(challengeTree),
         );
     }, [setSidebarTree]);
 
