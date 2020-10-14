@@ -6,21 +6,9 @@ export const fetchChallenges = createAsyncThunk(
     async () => requestChallenges(),
 );
 
-const initialState = [
-    {
-        category: '',
-        challenges: [
-            {
-                id: '',
-                name: '',
-            },
-        ],
-    },
-];
-
 const challengesSlice = createSlice({
     name: 'challenges',
-    initialState,
+    initialState: {},
     extraReducers: {
         [fetchChallenges.fulfilled]: (state, action) => {
             if (action.error) {
