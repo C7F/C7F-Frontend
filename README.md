@@ -6,8 +6,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/C7F/repo">
-    <img src="http://c7f.github.io/C7F-Frontend/C7F-dark.svg" alt="Logo" width="200">
+  <a href="https://github.com/C7F/C7F-Frontend">
+    <img src="https://c7f.github.io/C7F-Frontend/C7F-dark.svg" alt="Logo" width="200">
   </a>
 
   <h3 align="center">C7F</h3>
