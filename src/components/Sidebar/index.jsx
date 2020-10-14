@@ -18,11 +18,20 @@ color: ${(props) => props.theme.fgColor};
 background-color: ${(props) => props.theme.bgColor};
 `;
 
+const ThemeSelectorContainer = styled.div`
+    position: fixed;
+    bottom: 0rem;
+    padding-bottom: 1rem;
+    width: 20vw;
+    background-color: ${(props) => props.theme.bgColor};
+`;
+
 const SidebarDiv = styled.div`
     height: 100vh;
     overflow-y: auto;
     font-size: 1rem;
     padding: 1.5rem;
+    padding-bottom: 3rem;
     border-right: 1px solid ${(props) => props.theme.fgColor};
     position:fixed;
     width: 23vw;
@@ -119,12 +128,12 @@ export default function Sidebar() {
             <h2>C7F2020</h2>
             <Countdown date={+new Date('11/01/2020')} />
             <Tree tree={sidebarTree} />
-            <div className="themeSelector">
+            <ThemeSelectorContainer>
                 <label htmlFor="themeSelect" className="mt-2">Theme</label>
                 <ThemeSelector value={theme.name} id="themeSelect" onChange={themeSelect} className="ml-2">
                     {themes.map((name) => (<option value={name} key={nanoid()}>{name}</option>))}
                 </ThemeSelector>
-            </div>
+            </ThemeSelectorContainer>
         </SidebarDiv>
     );
 }
