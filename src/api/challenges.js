@@ -26,7 +26,7 @@ export async function requestChallenges() {
         challengeTree[category].push(chall);
     });
 
-    return challengeTree;
+    return { challenges, challengeTree };
 }
 
 export async function checkFlag({ flag }) {
