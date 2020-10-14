@@ -3,6 +3,7 @@ import { useParams, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { unwrapResult } from '@reduxjs/toolkit';
 
+import { addAlertWithTimeout } from '../../slices/alertsSlice';
 import { selectChallengeArray, submitFlag } from '../../slices/challengesSlice';
 
 import Highlight from '../../components/Highlight';
@@ -28,7 +29,24 @@ export default function Challenge() {
         e.preventDefault();
         dispatch(submitFlag({ flag }))
             .then(unwrapResult)
-            .then(console.log);
+            .then((resp) => {
+                let message = 'Flag was incorrect!';
+                let type = 'error';
+
+                if (resp) {
+                    message = 'Flag was submitted!';
+                    type = 'primary';
+                }
+
+                addAlertWithTimeout(
+                    dispatch,
+                    {
+                        message,
+                        type,
+                    },
+                    5000,
+                );
+            });
     };
 
     const makeChallenge = useCallback(() => {
