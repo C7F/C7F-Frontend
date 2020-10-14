@@ -1,34 +1,48 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useSelector } from 'react-redux';
-// import ReactCSSTransitionGroup from 'react-transition-group';
+import { useSelector, useDispatch } from 'react-redux';
+import { CSSTransitionGroup } from 'react-transition-group';
 
-import { selectAlerts } from '../../slices/alertsSlice';
+import './style.scss';
+import { selectAlerts, removeAlert } from '../../slices/alertsSlice';
 
 const CustomAlert = styled.div`
-    position: absolute;
-    bottom: 2rem;
-    right: 2rem;
     font-size: 1rem;
-    background-color: ${(props) => props.theme[props.alertType]};
+    background-color: ${(props) => props.theme[props.alertType]}44;
     height: 3rem;
     width: 15rem;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-top: 2vh;
 `;
 
 export default function Alert() {
     const alerts = useSelector(selectAlerts);
+    const dispatch = useDispatch();
+
+    const remove = (id) => {
+        dispatch(removeAlert(id));
+    };
 
     return (
-        <div>
+        <CSSTransitionGroup
+            component="div"
+            className="alert-container"
+            transitionName="fade-alerts"
+            transitionEnterTimeout={1000}
+            transitionLeaveTimeout={500}
+        >
             {alerts.map((alert) => (
-                <CustomAlert key={alert.id} alertType={alert.type}>
+                <CustomAlert
+                    key={alert.id}
+                    alertType={alert.type}
+                    onClick={() => remove(alert.id)}
+                >
                     {alert.message}
                 </CustomAlert>
             ))}
-        </div>
+        </CSSTransitionGroup>
     );
 }

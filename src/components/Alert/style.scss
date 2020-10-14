@@ -1,0 +1,28 @@
+.alert-container {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    max-height: 50%;
+    overflow: hidden;
+}
+
+.fade-alerts {
+    transition-duration: 1s;
+}
+.fade-alerts-enter {
+    opacity: 0.01;
+}
+
+.fade-alerts-enter.fade-alerts-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+}
+
+.fade-alerts-leave {
+    opacity: 1;
+}
+
+.fade-alerts-leave.fade-alerts-leave-active {
+    opacity: 0.01;
+    transition: opacity 300ms ease-in;
+}
