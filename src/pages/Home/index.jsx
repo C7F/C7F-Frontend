@@ -1,7 +1,7 @@
 import React from 'react';
-import './style.scss';
 import Typist from 'react-typist';
 
+import './style.scss';
 import Highlight from '../../components/Highlight';
 import { Heading1, Heading2 } from '../../components/Heading';
 
