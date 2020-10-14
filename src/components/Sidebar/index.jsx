@@ -23,6 +23,7 @@ const ThemeSelectorContainer = styled.div`
     bottom: 0rem;
     padding-bottom: 1rem;
     width: 20vw;
+    padding-top: 2vh;
     background-color: ${(props) => props.theme.bgColor};
 `;
 
