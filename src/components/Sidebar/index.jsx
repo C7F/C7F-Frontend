@@ -99,7 +99,7 @@ export default function Sidebar() {
         if (showChallenges) {
             dispatch(fetchChallenges())
                 .then(unwrapResult)
-                .then(setChallengeTree);
+                .then(({ challengeTree }) => setChallengeTree(challengeTree));
         } else if (hideChallenges) {
             setSidebarTree(
                 defaultTree,
