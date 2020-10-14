@@ -126,6 +126,11 @@ export default function Sidebar() {
     return (
         <SidebarDiv>
             <h2>C7F2020</h2>
+            <h5>
+                Team:
+                {' '}
+                {team.name}
+            </h5>
             <Countdown date={+new Date('11/01/2020')} />
             <Tree tree={sidebarTree} />
             <ThemeSelectorContainer>
