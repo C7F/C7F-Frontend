@@ -17,14 +17,25 @@ export default function ScoreboardPlot(props) {
     const scoreboard = useSelector(selectScoreboard)
         .filter((_team, index) => index < 10);
 
-    const getDataForTeam = (team) => ({
-        x: team.submissions.map(({ timestamp }) => timestamp),
-        y: team.submissions.map(({ points }) => points),
-        name: team.team,
-        type: 'scatter',
-        mode: 'lines+markers',
-        marker: { color: getRandomColor() },
-    });
+    const getDataForTeam = (team) => {
+        const x = team.submissions.map(({ timestamp }) => timestamp);
+        const y = [];
+        let sum = 0;
+
+        for (let i = 0; i < x.length; i += 1) {
+            sum += team.submissions[i].points;
+            y.push(sum);
+        }
+
+        return {
+            x,
+            y,
+            name: team.team,
+            type: 'scatter',
+            mode: 'lines+markers',
+            marker: { color: getRandomColor() },
+        };
+    };
 
     const data = scoreboard.map((team) => getDataForTeam(team));
 
