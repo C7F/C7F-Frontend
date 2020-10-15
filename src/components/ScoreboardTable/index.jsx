@@ -1,5 +1,8 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import styled from 'styled-components';
+
+import { selectScoreboard } from '../../slices/scoreboardSlice';
 
 const CustomTable = styled.table`
     border: 1px solid ${(props) => props.theme.primary} !important;
@@ -19,6 +22,8 @@ const CustomTd = styled.td`
 `;
 
 export default function ScoreboardTable() {
+    const scoreboard = useSelector(selectScoreboard);
+
     return (
         <CustomTable>
             <thead>
@@ -38,20 +43,28 @@ export default function ScoreboardTable() {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <CustomTd>
-                        1.
-                    </CustomTd>
-                    <CustomTd>
-                        Some really big team name here
-                    </CustomTd>
-                    <CustomTd>
-                        27000
-                    </CustomTd>
-                    <CustomTd>
-                        Replublic of China
-                    </CustomTd>
-                </tr>
+                {scoreboard.map(({
+                    rank,
+                    team,
+                    points,
+                    country,
+                }) => (
+                    <tr>
+                        <CustomTd>
+                            {rank}
+                            .
+                        </CustomTd>
+                        <CustomTd>
+                            {team}
+                        </CustomTd>
+                        <CustomTd>
+                            {points}
+                        </CustomTd>
+                        <CustomTd>
+                            {country}
+                        </CustomTd>
+                    </tr>
+                ))}
             </tbody>
         </CustomTable>
     );
