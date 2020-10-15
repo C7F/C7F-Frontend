@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = [
     {
-        rank: 3,
+        rank: 7,
         team: 'csictf',
         points: 1450,
         country: 'India',
@@ -25,7 +25,7 @@ const initialState = [
         ],
     },
     {
-        rank: 7,
+        rank: 3,
         team: 'GreyFang',
         points: 1620,
         country: 'India',
@@ -48,7 +48,7 @@ const initialState = [
         ],
     },
     {
-        rank: 9,
+        rank: 1,
         team: 'bi0s',
         points: 1674,
         country: 'India',
@@ -71,7 +71,7 @@ const initialState = [
         ],
     },
     {
-        rank: 8,
+        rank: 2,
         team: '3k',
         points: 1621,
         country: 'Turkey',
@@ -94,7 +94,7 @@ const initialState = [
         ],
     },
     {
-        rank: 4,
+        rank: 6,
         team: 'Zh3r0',
         points: 1516,
         country: 'India',
@@ -140,7 +140,7 @@ const initialState = [
         ],
     },
     {
-        rank: 6,
+        rank: 4,
         team: 'InfosecIITR',
         points: 1588,
         country: 'India',
@@ -163,7 +163,7 @@ const initialState = [
         ],
     },
     {
-        rank: 2,
+        rank: 8,
         team: 'warlock_rootx',
         points: 1446,
         country: 'India',
@@ -186,7 +186,7 @@ const initialState = [
         ],
     },
     {
-        rank: 1,
+        rank: 9,
         team: 'Shellphish',
         points: 1433,
         country: 'USA',
