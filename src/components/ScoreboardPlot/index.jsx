@@ -3,8 +3,8 @@ import Plot from 'react-plotly.js';
 import { useSelector } from 'react-redux';
 import propTypes from 'prop-types';
 
-import { selectScoreboard } from '../../slices/scoreboardSlice';
 import { getTheme } from '../../slices/themeSlice';
+import { selectScoreboard } from '../../slices/scoreboardSlice';
 
 import './style.scss';
 
