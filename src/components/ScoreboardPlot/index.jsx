@@ -6,6 +6,8 @@ import propTypes from 'prop-types';
 import { getTheme } from '../../slices/themeSlice';
 import { selectScoreboard } from '../../slices/scoreboardSlice';
 
+import getRandomColor from '../../utils/getRandomColor';
+
 import './style.scss';
 
 export default function ScoreboardPlot(props) {
@@ -14,15 +16,6 @@ export default function ScoreboardPlot(props) {
     const theme = useSelector(getTheme);
     const scoreboard = useSelector(selectScoreboard)
         .filter((_team, index) => index < 10);
-
-    const getRandomColor = () => {
-        const letters = '0123456789ABCDEF';
-        let color = '#';
-        for (let i = 0; i < 6; i += 1) {
-            color += letters[Math.floor(Math.random() * 16)];
-        }
-        return color;
-    };
 
     const getDataForTeam = (team) => ({
         x: team.submissions.map(({ timestamp }) => timestamp),
