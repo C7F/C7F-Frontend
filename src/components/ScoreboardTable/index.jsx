@@ -49,7 +49,7 @@ export default function ScoreboardTable() {
                     points,
                     country,
                 }) => (
-                    <tr>
+                    <tr key={rank + team}>
                         <CustomTd>
                             {rank}
                             .
