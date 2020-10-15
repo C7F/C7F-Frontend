@@ -8,39 +8,49 @@ const CustomTable = styled.table`
     text-align: center;
 `;
 
+const CustomTh = styled.th`
+    color: ${(props) => props.theme.primary} !important;
+    border: 1px solid ${(props) => props.theme.primary} !important;
+    font-size: 1.1rem;
+`;
+
+const CustomTd = styled.td`
+    border: 1px solid ${(props) => props.theme.primary} !important;
+`;
+
 export default function ScoreboardTable() {
     return (
         <CustomTable>
             <thead>
                 <tr>
-                    <th>
+                    <CustomTh>
                         Rank
-                    </th>
-                    <th>
+                    </CustomTh>
+                    <CustomTh>
                         Team
-                    </th>
-                    <th>
+                    </CustomTh>
+                    <CustomTh>
                         Points
-                    </th>
-                    <th>
+                    </CustomTh>
+                    <CustomTh>
                         Country
-                    </th>
+                    </CustomTh>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>
+                    <CustomTd>
                         1.
-                    </td>
-                    <td>
+                    </CustomTd>
+                    <CustomTd>
                         Some really big team name here
-                    </td>
-                    <td>
+                    </CustomTd>
+                    <CustomTd>
                         27000
-                    </td>
-                    <td>
-                        Replublic of china
-                    </td>
+                    </CustomTd>
+                    <CustomTd>
+                        Replublic of China
+                    </CustomTd>
                 </tr>
             </tbody>
         </CustomTable>
