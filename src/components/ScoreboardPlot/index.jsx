@@ -33,6 +33,17 @@ export default function ScoreboardPlot(props) {
                 width,
                 height,
                 title: 'Top 10 teams',
+                paper_bgcolor: theme.bgColor,
+                plot_bgcolor: theme.bgColor,
+                font: {
+                    color: theme.fgColor,
+                },
+                xaxis: {
+                    gridcolor: theme.primary,
+                },
+                yaxis: {
+                    gridcolor: theme.primary,
+                },
             }}
         />
     );
