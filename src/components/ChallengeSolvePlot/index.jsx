@@ -5,16 +5,20 @@ import { useSelector } from 'react-redux';
 import { getTheme } from '../../slices/themeSlice';
 import { selectChallengeArray } from '../../slices/challengesSlice';
 
-import getRandomColor from '../../utils/getRandomColor';
-
 export default function ChallengeSolvePlot() {
     const theme = useSelector(getTheme);
     const challenges = useSelector(selectChallengeArray);
 
-    const x = challenges.map((challenge) => challenge.name);
+    const x = challenges.map(({ name }) => name);
 
     // Replace with solves for challenge
-    const y = challenges.map((challenge) => challenge.points);
+    const y = challenges.map(({ points }) => points);
+
+    const yMax = Math.max(...y);
+    const colors = y.map((item) => (
+        theme.primary + Math.round((item * 255) / yMax).toString(16).toUpperCase()
+    ));
+    console.log(colors);
 
     return (
         <Plot
@@ -25,7 +29,7 @@ export default function ChallengeSolvePlot() {
                     x,
                     y,
                     marker: {
-                        color: challenges.map(() => getRandomColor()),
+                        color: colors,
                     },
                 },
             ]}
