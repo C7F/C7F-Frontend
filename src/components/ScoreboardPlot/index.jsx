@@ -59,6 +59,7 @@ export default function ScoreboardPlot(props) {
                     gridcolor: theme.primary,
                 },
             }}
+            useResizeHandler
         />
     );
 }
