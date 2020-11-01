@@ -53,6 +53,9 @@ export default function Sidebar() {
         }, {
             text: 'Register',
             link: '/register',
+        }, {
+            text: 'Scoreboard',
+            link: '/scoreboard',
         },
     ];
 

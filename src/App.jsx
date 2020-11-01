@@ -20,6 +20,8 @@ import Login from './pages/Login';
 import Logout from './pages/Logout';
 import Register from './pages/Register';
 import Challenge from './pages/Challenge';
+import AdminHome from './pages/Admin/Home';
+import Scoreboard from './pages/Scoreboard';
 
 import Alert from './components/Alert';
 import Sidebar from './components/Sidebar';
@@ -60,6 +62,12 @@ function App() {
                                 </Route>
                                 <Route path="/challenge/:id">
                                     <Challenge />
+                                </Route>
+                                <Route path="/scoreboard">
+                                    <Scoreboard />
+                                </Route>
+                                <Route path="/admin">
+                                    <AdminHome />
                                 </Route>
                                 <Route path="/">
                                     <Home />
