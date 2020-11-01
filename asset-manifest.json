@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/C7F-Frontend/static/css/main.89f28211.chunk.css",
-    "main.js": "/C7F-Frontend/static/js/main.61bbc09c.chunk.js",
+    "main.css": "/C7F-Frontend/static/css/main.bf583f00.chunk.css",
+    "main.js": "/C7F-Frontend/static/js/main.290c31c2.chunk.js",
     "runtime-main.js": "/C7F-Frontend/static/js/runtime-main.72cf65c5.js",
     "static/css/2.d73399ba.chunk.css": "/C7F-Frontend/static/css/2.d73399ba.chunk.css",
-    "static/js/2.567ab99a.chunk.js": "/C7F-Frontend/static/js/2.567ab99a.chunk.js",
+    "static/js/2.36340f80.chunk.js": "/C7F-Frontend/static/js/2.36340f80.chunk.js",
     "index.html": "/C7F-Frontend/index.html",
-    "precache-manifest.d263103020a384dc5cc8fa050cfdacad.js": "/C7F-Frontend/precache-manifest.d263103020a384dc5cc8fa050cfdacad.js",
+    "precache-manifest.e0a9c49c8b37e58255aec7f554bc8484.js": "/C7F-Frontend/precache-manifest.e0a9c49c8b37e58255aec7f554bc8484.js",
     "service-worker.js": "/C7F-Frontend/service-worker.js",
-    "static/js/2.567ab99a.chunk.js.LICENSE.txt": "/C7F-Frontend/static/js/2.567ab99a.chunk.js.LICENSE.txt"
+    "static/js/2.36340f80.chunk.js.LICENSE.txt": "/C7F-Frontend/static/js/2.36340f80.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.72cf65c5.js",
     "static/css/2.d73399ba.chunk.css",
-    "static/js/2.567ab99a.chunk.js",
-    "static/css/main.89f28211.chunk.css",
-    "static/js/main.61bbc09c.chunk.js"
+    "static/js/2.36340f80.chunk.js",
+    "static/css/main.bf583f00.chunk.css",
+    "static/js/main.290c31c2.chunk.js"
   ]
 }
