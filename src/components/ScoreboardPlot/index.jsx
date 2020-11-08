@@ -58,6 +58,7 @@ export default function ScoreboardPlot(props) {
                 yaxis: {
                     gridcolor: theme.primary,
                 },
+                autosize: true,
             }}
             useResizeHandler
         />
