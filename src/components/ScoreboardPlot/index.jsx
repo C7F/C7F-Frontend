@@ -84,14 +84,11 @@ export default function ScoreboardPlot(props) {
                     gridcolor: theme.primary,
                 },
                 autosize: true,
-                updatemenus:
-                    [
-                        {
-                            y: 1,
-                            yanchor: 'top',
-                            buttons: generateButtons(),
-                        },
-                    ],
+                updatemenus: [{
+                    y: 1,
+                    yanchor: 'top',
+                    buttons: generateButtons(),
+                }],
             }}
             useResizeHandler
         />
