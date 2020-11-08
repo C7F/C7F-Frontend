@@ -16,7 +16,7 @@ export default function CategoryPieChart() {
                 type: 'pie',
             }]}
             layout={{
-                width: 500,
+                width: 700,
                 height: 500,
                 title: 'Category-wise distribution',
                 paper_bgcolor: theme.bgColor,
@@ -24,6 +24,23 @@ export default function CategoryPieChart() {
                 font: {
                     color: theme.fgColor,
                 },
+                updatemenus: [{
+                    y: 1,
+                    yanchor: 'top',
+                    buttons: [{
+                        method: 'restyle',
+                        args: [{ type: 'pie' }],
+                        label: 'Pie Chart',
+                    }, {
+                        method: 'restyle',
+                        args: ['type', 'bar'],
+                        label: 'Bar Plot',
+                    }, {
+                        method: 'restyle',
+                        args: [{ type: 'scatter', mode: 'lines+markers' }],
+                        label: 'Line Plot',
+                    }],
+                }],
             }}
         />
     );
