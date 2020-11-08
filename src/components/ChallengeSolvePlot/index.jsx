@@ -45,7 +45,26 @@ export default function ChallengeSolvePlot() {
                 yaxis: {
                     gridcolor: theme.primary,
                 },
+                updatemenus: [{
+                    y: 1,
+                    yanchor: 'top',
+                    buttons: [{
+                        method: 'restyle',
+                        args: ['type', 'bar'],
+                        label: 'Bar Plot',
+                    }, {
+                        method: 'restyle',
+                        args: [{ type: 'scatter', mode: 'lines+markers' }],
+                        label: 'Line Plot',
+                    }, {
+                        method: 'restyle',
+                        args: [{ type: 'scatter', mode: 'markers' }],
+                        label: 'Scatter Plot',
+                    }],
+                }],
+                autosize: true,
             }}
+            useResizeHandler
         />
     );
 }
