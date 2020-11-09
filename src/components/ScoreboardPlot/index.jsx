@@ -15,7 +15,7 @@ export default function ScoreboardPlot(props) {
     const { width, height } = props;
 
     const theme = useSelector(getTheme);
-    const scoreboard = useSelector(selectScoreboard);
+    const scoreboard = useSelector(selectScoreboard).slice(0, 50);
 
     const getDataForTeam = (team) => {
         const x = team.submissions.map(({ timestamp }) => timestamp);
@@ -37,32 +37,44 @@ export default function ScoreboardPlot(props) {
         };
     };
 
-    const data = scoreboard.slice(0, 10).map((team) => getDataForTeam(team));
+    const genVisibilityArray = (start, end) => {
+        const visibilityArray = new Array(scoreboard.length);
 
-    const generateButtons = () => [{
-        method: 'restyle',
-        args: [data],
-        label: '1-10',
-    }, {
-        method: 'restyle',
-        args: [scoreboard.slice(11, 20).map((team) => getDataForTeam(team))],
-        label: '11-20',
-    },
-    {
-        method: 'restyle',
-        args: [scoreboard.slice(21, 30).map((team) => getDataForTeam(team))],
-        label: '21-30',
-    },
-    {
-        method: 'restyle',
-        args: [scoreboard.slice(31, 40).map((team) => getDataForTeam(team))],
-        label: '31-40',
-    },
-    {
-        method: 'restyle',
-        args: [scoreboard.slice(41, 50).map((team) => getDataForTeam(team))],
-        label: '41-50',
-    }];
+        for (let i = 0; i < visibilityArray.length; i += 1) {
+            visibilityArray[i] = false;
+            if (i >= start && i < end) {
+                visibilityArray[i] = true;
+            }
+        }
+
+        return visibilityArray;
+    };
+
+    console.log(genVisibilityArray(0, 10));
+
+    const data = scoreboard.map((team) => getDataForTeam(team));
+    data.forEach((item, index) => {
+        if (index > 10) {
+            // eslint-disable-next-line no-param-reassign
+            item.visible = false;
+        }
+    });
+
+    const generateButtons = () => {
+        const buttons = [];
+
+        for (let i = 0; i < scoreboard.length; i += 10) {
+            buttons.push({
+                method: 'restyle',
+                label: `${i + 1}-${i + 10}`,
+                args: [{
+                    visible: genVisibilityArray(i, i + 10),
+                }],
+            });
+        }
+
+        return buttons;
+    };
 
     return (
         <Plot
