@@ -18,12 +18,13 @@ export default function ScoreboardPlot(props) {
     const scoreboard = useSelector(selectScoreboard).slice(0, 50);
 
     const getDataForTeam = (team) => {
-        const x = team.submissions.map(({ timestamp }) => timestamp);
+        const x = [];
         const y = [];
         let sum = 0;
 
-        for (let i = 0; i < x.length; i += 1) {
+        for (let i = 0; i < team.submissions.length; i += 1) {
             sum += team.submissions[i].points;
+            x.push(team.submissions[i].timestamp);
             y.push(sum);
         }
 
