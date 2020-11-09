@@ -14,7 +14,7 @@ function genDummySubmissions(n) {
     }
 
     const timestamps = genRandomN(1602787639417, 1602787653905, n);
-    const points = genRandomN(100, 1000, n);
+    const points = [0].concat(genRandomN(100, 1000, n - 1));
 
     const submissions = [];
 
@@ -40,7 +40,7 @@ function makeCountries() {
 }
 
 function genTeamData(countries) {
-    const submissions = genDummySubmissions(3);
+    const submissions = genDummySubmissions(5);
     const points = submissions.map((submission) => submission.points).reduce((a, b) => a + b);
 
     return {
@@ -52,7 +52,7 @@ function genTeamData(countries) {
     };
 }
 
-export default function genScoreboard(n) {
+function genScoreboard(n) {
     const countries = makeCountries();
     let scoreboard = [];
     for (let i = 0; i < n; i += 1) {
@@ -65,3 +65,7 @@ export default function genScoreboard(n) {
     scoreboard.forEach((item, index) => { item.rank = index + 1; });
     return scoreboard;
 }
+
+const fs = require('fs');
+
+fs.writeFileSync('./dummyScoreboard.json', JSON.stringify(genScoreboard(50), null, 4));
