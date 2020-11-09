@@ -50,11 +50,11 @@ export default function ScoreboardPlot(props) {
         return visibilityArray;
     };
 
-    console.log(genVisibilityArray(0, 10));
-
     const data = scoreboard.map((team) => getDataForTeam(team));
+    const batchSize = 10;
+
     data.forEach((item, index) => {
-        if (index > 10) {
+        if (index > batchSize) {
             // eslint-disable-next-line no-param-reassign
             item.visible = false;
         }
@@ -63,12 +63,12 @@ export default function ScoreboardPlot(props) {
     const generateButtons = () => {
         const buttons = [];
 
-        for (let i = 0; i < scoreboard.length; i += 10) {
+        for (let i = 0; i < scoreboard.length; i += batchSize) {
             buttons.push({
                 method: 'restyle',
-                label: `${i + 1}-${i + 10}`,
+                label: `${i + 1}-${i + batchSize}`,
                 args: [{
-                    visible: genVisibilityArray(i, i + 10),
+                    visible: genVisibilityArray(i, i + batchSize),
                 }],
             });
         }
@@ -83,7 +83,7 @@ export default function ScoreboardPlot(props) {
             layout={{
                 width,
                 height,
-                title: 'Top 10 teams',
+                title: 'Team scores vs Time',
                 paper_bgcolor: theme.bgColor,
                 plot_bgcolor: theme.bgColor,
                 font: {
