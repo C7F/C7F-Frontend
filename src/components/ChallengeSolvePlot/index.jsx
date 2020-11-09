@@ -18,7 +18,6 @@ export default function ChallengeSolvePlot() {
     const colors = y.map((item) => (
         theme.primary + Math.round((item * 255) / yMax).toString(16).toUpperCase()
     ));
-    console.log(colors);
 
     return (
         <Plot
@@ -30,6 +29,9 @@ export default function ChallengeSolvePlot() {
                     y,
                     marker: {
                         color: colors,
+                    },
+                    line: {
+                        color: theme.primary,
                     },
                 },
             ]}

@@ -7,13 +7,21 @@ import { getTheme } from '../../slices/themeSlice';
 export default function CategoryPieChart() {
     const theme = useSelector(getTheme);
 
+    const values = [15, 25, 15, 10, 35];
+    const colors = values.map((item) => (
+        theme.primary + Math.round((item * 255) / 35).toString(16).toUpperCase()
+    ));
+
     return (
         <Plot
             className="plot"
             data={[{
-                values: [15, 25, 15, 10, 35],
+                values,
                 labels: ['Pwn', 'Web', 'Crypto', 'Misc', 'Forensics'],
                 type: 'pie',
+                line: {
+                    color: theme.primary,
+                },
             }]}
             layout={{
                 width: 700,
@@ -29,15 +37,25 @@ export default function CategoryPieChart() {
                     yanchor: 'top',
                     buttons: [{
                         method: 'restyle',
-                        args: [{ type: 'pie' }],
+                        args: [{
+                            type: 'pie',
+                            marker: { colors: null },
+                        }],
                         label: 'Pie Chart',
                     }, {
                         method: 'restyle',
-                        args: ['type', 'bar'],
+                        args: [{
+                            type: 'bar',
+                            marker: { color: colors },
+                        }],
                         label: 'Bar Plot',
                     }, {
                         method: 'restyle',
-                        args: [{ type: 'scatter', mode: 'lines+markers' }],
+                        args: [{
+                            type: 'scatter',
+                            mode: 'lines+markers',
+                            marker: { color: colors },
+                        }],
                         label: 'Line Plot',
                     }],
                 }],
