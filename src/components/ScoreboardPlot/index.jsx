@@ -24,7 +24,8 @@ export default function ScoreboardPlot(props) {
 
         for (let i = 0; i < team.submissions.length; i += 1) {
             sum += team.submissions[i].points;
-            x.push(team.submissions[i].timestamp);
+            const timestamp = new Date(team.submissions[i].timestamp);
+            x.push(timestamp);
             y.push(sum);
         }
 
